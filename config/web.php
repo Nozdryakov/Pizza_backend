@@ -96,6 +96,15 @@ $config = [
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/application', // своя придумка => 'namespace/controller'
+                    'prefix' => '',
+                    'extraPatterns' => [
+                        'POST handler-order' => 'handler-order',
+                        // PATH url => action controller,
+                    ],
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
                     'controller' => 'admin/admin',
                     'prefix' => '',
                     'extraPatterns' => [

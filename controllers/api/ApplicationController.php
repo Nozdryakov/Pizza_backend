@@ -45,7 +45,6 @@ class ApplicationController extends Controller
         if ($model->load(Yii::$app->request->post(), '') && $model->validate()) {
             extract(Yii::$app->request->post());
             $this->mailUseCase->execute($setFrom, $setSubject, $setTextBody);
-
             return [
                 'error' => false,
                 'send' => true,
