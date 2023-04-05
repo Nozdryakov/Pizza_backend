@@ -28,9 +28,12 @@ php yii migrate
 ~~~
 php yii seeder/execute-seeders-up
 ~~~
+7.  ВАЖНО!
+
+     В таблице `users` добавить запись, где все значения = `admin`
 # API запросы:
 
-## get:
+## GET:
 
 Выводит все товары
 ~~~
@@ -39,8 +42,8 @@ http://localhost:8000/api/applications/index
 http://localhost:8000/admin/admins/index
 ~~~
 
-## post:
-CRUD операции для таблиц `stocks`,`product`,`popular`:
+## POST:
+CRUD операции для таблиц `stocks`,`product`,`popular`(чтобы удалить запись, вместо `POST` в Postman выбрать `DELETE`) :
 ~~~
 http://localhost:8000/admin/admins/insert-popular
 
@@ -67,4 +70,28 @@ http://localhost:8000/admin/admins/update-stock
 Для отправки писем:
 ~~~
 http://localhost:8000/api/application/handler-order
+~~~
+Для того, чтобы отправить данные на свою почту замените константу `SEND_EMAIL` на значение нужной вам почты. 
+
+ВАЖНО! - Почта должна соответствовать той, которая регистрируется ниже, на сервисе. На неё будут приходить письма. 
+
+Зарегистрируйтесь, например [здесь](https://mailtrap.io/). 
+
+1. Перейдите в Postman.
+2. Выберите тип запроса `Post`.
+3. Выберите вкладку `body`, затем `raw`.
+4. Вставьте эту запись, где
+
+`setFrom` - имя отправителя
+
+`setSubject` - тема письма
+
+`setTextBody` - тело письма (содержимое) :
+
+~~~
+{
+    "setFrom":"mypost@post.com",
+    "setSubject":"theme",
+    "setTextBody":"hello, pizza!"
+}
 ~~~
