@@ -1,0 +1,1172 @@
+2023-04-05 16:06:35 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:06:35 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=--------------------------210300107883050019864404'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => '289a4260-da50-4741-ba5d-b96934079a70'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '405387'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '48364'
+    'REDIRECT_URL' => '/api/applications/handler-order'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/applications/handler-order'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680710795.2688
+    'REQUEST_TIME' => 1680710795
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:06:40 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:06:40 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = [
+    'id' => '2'
+    'title' => 'zv'
+    'description' => 'tyuio'
+    'price' => '99'
+]
+
+$_FILES = [
+    'imageFile' => [
+        'name' => 'Image_created_with_a_mobile_phone.png'
+        'type' => 'image/png'
+        'tmp_name' => '/tmp/phpRuJfnJ'
+        'error' => 0
+        'size' => 404719
+    ]
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=--------------------------060295742174596703862450'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => '65f49f9d-39bc-4337-bb64-076eb7876486'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'CONTENT_LENGTH' => '405387'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '48376'
+    'REDIRECT_URL' => '/api/applications/handler-order'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/applications/handler-order'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680710800.8453
+    'REQUEST_TIME' => 1680710800
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:08:35 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:08:35 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => '28f86c6c-340c-4008-9d77-9c71a29c4bf1'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '37196'
+    'REDIRECT_URL' => '/api/applications/handler-order'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/applications/handler-order'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680710915.6947
+    'REQUEST_TIME' => 1680710915
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:10:37 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:10:37 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => '3eb86cf7-2fef-4ee2-a9fd-892bcb62883a'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '41982'
+    'REDIRECT_URL' => '/api/applications/handler-order'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/applications/handler-order'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680711037.8897
+    'REQUEST_TIME' => 1680711037
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:11:47 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:11:47 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => '99aa5b18-0c25-4e74-9556-7aa0a52f604b'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '42902'
+    'REDIRECT_URL' => '/api/application/handler-order'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/application/handler-order'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680711107.1855
+    'REQUEST_TIME' => 1680711107
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:11:50 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:11:50 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => '74670cd8-a6f0-400a-8c0d-de110ef59089'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '42902'
+    'REDIRECT_URL' => '/api/application/handler-order'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/application/handler-order'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680711110.9458
+    'REQUEST_TIME' => 1680711110
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:13:18 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:13:18 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => 'fa3b85d9-02cd-42c3-af06-a11adc504824'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '55756'
+    'REDIRECT_URL' => '/api/application/handler'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/application/handler'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680711198.1301
+    'REQUEST_TIME' => 1680711198
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:13:22 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:13:21 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => 'ff1632e7-17f5-4861-8781-228e598fab4d'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '55756'
+    'REDIRECT_URL' => '/api/application/handler'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/application/handler'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680711201.9932
+    'REQUEST_TIME' => 1680711201
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:13:28 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:13:28 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => 'f042865c-9f20-496c-85d1-b0192c597244'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '47072'
+    'REDIRECT_URL' => '/api/application/handler'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/application/handler'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680711208.1657
+    'REQUEST_TIME' => 1680711208
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:14:03 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:14:03 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => '29778769-0ec9-4c5d-9c8a-38d7cc685ce6'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '45744'
+    'REDIRECT_URL' => '/api/application/handler-order'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/application/handler-order'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680711243.7008
+    'REQUEST_TIME' => 1680711243
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:14:08 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:14:08 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => 'e59f5482-160e-4ba8-a1aa-c36631e618bc'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '45744'
+    'REDIRECT_URL' => '/api/application/handler-order'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/application/handler-order'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680711248.1032
+    'REQUEST_TIME' => 1680711248
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:14:13 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:14:13 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = [
+    'id' => '2'
+    'title' => 'zv'
+    'description' => 'tyuio'
+    'price' => '99'
+]
+
+$_FILES = [
+    'imageFile' => [
+        'name' => 'Image_created_with_a_mobile_phone.png'
+        'type' => 'image/png'
+        'tmp_name' => '/tmp/phpFYghsN'
+        'error' => 0
+        'size' => 404719
+    ]
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=--------------------------978888549501047580944325'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => '3367198b-a89c-4136-9727-98c925ce7ef7'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'CONTENT_LENGTH' => '405387'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '51278'
+    'REDIRECT_URL' => '/api/application/handler-order'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/application/handler-order'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680711253.8757
+    'REQUEST_TIME' => 1680711253
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:14:17 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:14:17 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => '02c98e3d-51cc-4e67-a194-c754c9f828d2'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '51278'
+    'REDIRECT_URL' => '/api/application/handler-order'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/application/handler-order'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680711257.378
+    'REQUEST_TIME' => 1680711257
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:14:22 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:14:22 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => '1ec0d5da-71e0-41ec-8196-9887f538a9b7'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '46054'
+    'REDIRECT_URL' => '/api/application/handler-order'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/application/handler-order'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680711262.6882
+    'REQUEST_TIME' => 1680711262
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:14:26 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:14:26 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => '4824f335-2b1a-451e-9563-b18b0ae8ba86'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1774'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '46054'
+    'REDIRECT_URL' => '/api/application/handler-order'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/application/handler-order'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680711266.9076
+    'REQUEST_TIME' => 1680711266
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:14:31 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:14:31 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => '912da4a9-3bf8-46a7-9a95-288b065b720a'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '46054'
+    'REDIRECT_URL' => '/api/application/handler-order'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/application/handler-order'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680711271.5291
+    'REQUEST_TIME' => 1680711271
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:14:36 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:14:36 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = [
+    'id' => '2'
+    'title' => 'zv'
+    'description' => 'tyuio'
+    'price' => '99'
+]
+
+$_FILES = [
+    'imageFile' => [
+        'name' => 'Image_created_with_a_mobile_phone.png'
+        'type' => 'image/png'
+        'tmp_name' => '/tmp/php9KjNBj'
+        'error' => 0
+        'size' => 404719
+    ]
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=--------------------------916277227573995813767280'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => '9c57dc68-d0c8-4610-9fe2-f9720b831e8a'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'CONTENT_LENGTH' => '405387'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '46054'
+    'REDIRECT_URL' => '/api/application/handler-order'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/application/handler-order'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680711276.4645
+    'REQUEST_TIME' => 1680711276
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:14:39 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:14:39 [172.18.0.1][-][5fc247ce1990df6745f4109023250535][info][application] $_GET = []
+
+$_POST = [
+    'id' => '2'
+    'title' => 'zv'
+    'description' => 'tyuio'
+    'price' => '99'
+]
+
+$_FILES = [
+    'imageFile' => [
+        'name' => 'Image_created_with_a_mobile_phone.png'
+        'type' => 'image/png'
+        'tmp_name' => '/tmp/php6g6Mdj'
+        'error' => 0
+        'size' => 404719
+    ]
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '5fc247ce1990df6745f4109023250535'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=--------------------------440716070338013257572395'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => '537b2eb4-801e-4482-aa97-f9eca16c293d'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=5fc247ce1990df6745f4109023250535'
+    'CONTENT_LENGTH' => '405387'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '46054'
+    'REDIRECT_URL' => '/api/application/handler-order'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/application/handler-order'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680711279.8576
+    'REQUEST_TIME' => 1680711279
+    'argv' => []
+    'argc' => 0
+]
+2023-04-05 16:23:57 [172.18.0.1][1][f497b73bb5be82e1a929cfc08a3b0457][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2023-04-05 16:23:57 [172.18.0.1][1][f497b73bb5be82e1a929cfc08a3b0457][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'f497b73bb5be82e1a929cfc08a3b0457'
+    '_csrf' => '8cfdcf13c41cedf87085a147ecc2af3f765d818b443b17e1012bcab9e37464b7a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"qJxcxqGy9pBpWc-xsWZh23vd2zTCVNIY\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => 'admin'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.31.3'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => 'a3d203a5-719b-4a2f-b36b-5a568ed6cd6e'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=f497b73bb5be82e1a929cfc08a3b0457; _csrf=8cfdcf13c41cedf87085a147ecc2af3f765d818b443b17e1012bcab9e37464b7a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22qJxcxqGy9pBpWc-xsWZh23vd2zTCVNIY%22%3B%7D'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.5'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '56982'
+    'REDIRECT_URL' => '/api/application/handler-order'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/application/handler-order'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1680711837.3303
+    'REQUEST_TIME' => 1680711837
+    'argv' => []
+    'argc' => 0
+]
