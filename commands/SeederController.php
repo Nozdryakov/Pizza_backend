@@ -8,11 +8,11 @@ class SeederController extends \yii\console\Controller
     private string $defaultSeeder = '/app/custom/ClassSeeder.php';
 
     private array $listClassSeeder = [
+        'CategoriesSeeder',
         'UsersSeeder',
         'StocksSeeder',
         'ProductSeeder',
         'PopularSeeder',
-        'CategoriesSeeder',
     ];
 
     public function actionCreateSeeder($name)

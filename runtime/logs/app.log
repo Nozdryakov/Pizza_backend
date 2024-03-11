@@ -1834,3 +1834,513 @@ $_SERVER = [
     ]
     'argc' => 1
 ]
+2024-02-25 21:37:19 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1049] Unknown database 'pizzaV' in /app/vendor/yiisoft/yii2/db/Connection.php:722
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/db/Connection.php(722): PDO->__construct('mysql:host=db;d...', 'root', 'root', NULL)
+#1 /app/vendor/yiisoft/yii2/db/Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 /app/vendor/yiisoft/yii2/db/Connection.php(1067): yii\db\Connection->open()
+#3 /app/vendor/yiisoft/yii2/db/Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 /app/vendor/yiisoft/yii2/db/Command.php(261): yii\db\Connection->getSlavePdo(true)
+#5 /app/vendor/yiisoft/yii2/db/Command.php(1181): yii\db\Command->prepare(true)
+#6 /app/vendor/yiisoft/yii2/db/Command.php(417): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /app/vendor/yiisoft/yii2/db/mysql/Schema.php(328): yii\db\Command->queryAll()
+#8 /app/vendor/yiisoft/yii2/db/mysql/Schema.php(133): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /app/vendor/yiisoft/yii2/db/Schema.php(756): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 /app/vendor/yiisoft/yii2/db/Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 /app/vendor/yiisoft/yii2/console/controllers/MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 /app/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 /app/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /app/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#17 /app/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('', Array)
+#18 /app/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('', Array)
+#19 /app/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 /app/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /app/yii(20): yii\base\Application->run()
+#23 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1049] Unknown database 'pizzaV' in /app/vendor/yiisoft/yii2/db/Connection.php:648
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/db/Connection.php(1067): yii\db\Connection->open()
+#1 /app/vendor/yiisoft/yii2/db/Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 /app/vendor/yiisoft/yii2/db/Command.php(261): yii\db\Connection->getSlavePdo(true)
+#3 /app/vendor/yiisoft/yii2/db/Command.php(1181): yii\db\Command->prepare(true)
+#4 /app/vendor/yiisoft/yii2/db/Command.php(417): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /app/vendor/yiisoft/yii2/db/mysql/Schema.php(328): yii\db\Command->queryAll()
+#6 /app/vendor/yiisoft/yii2/db/mysql/Schema.php(133): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /app/vendor/yiisoft/yii2/db/Schema.php(756): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 /app/vendor/yiisoft/yii2/db/Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 /app/vendor/yiisoft/yii2/console/controllers/MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 /app/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 /app/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#14 /app/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#15 /app/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('', Array)
+#16 /app/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('', Array)
+#17 /app/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 /app/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 /app/yii(20): yii\base\Application->run()
+#21 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 1049
+    [2] => Unknown database 'pizzaV'
+)
+
+2024-02-25 21:37:19 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_ENABLE_XDEBUG' => '0'
+    'PHP_USER_ID' => '33'
+    'HOSTNAME' => '9cae3a466543'
+    'PHP_VERSION' => '7.4.33'
+    'APACHE_CONFDIR' => '/etc/apache2'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/app'
+    'HOME' => '/root'
+    'PHP_SHA256' => '924846abf93bc613815c55dd3f5809377813ac62a9ec4eb3778675b82a27b927'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'TERM' => 'linux'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.33.tar.xz'
+    'SHLVL' => '1'
+    'COMPOSER_ALLOW_SUPERUSER' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'APACHE_ENVVARS' => '/etc/apache2/envvars'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.33.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1708897039.2534
+    'REQUEST_TIME' => 1708897039
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2024-03-11 20:07:46 [172.18.0.1][-][57c811cad3451f8797374771018230df][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /app/vendor/yiisoft/yii2/web/Request.php:299
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+2024-03-11 20:07:46 [172.18.0.1][-][57c811cad3451f8797374771018230df][info][application] $_GET = []
+
+$_POST = [
+    'surname' => 'artem'
+    'name' => 'artem2'
+    'f_name' => 'dsfds'
+    'gender' => '1'
+    'date_of_birth' => '2000-01-01'
+    'date_of_start' => '2002-01-07'
+]
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=--------------------------826291055564175640907515'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.32.3'
+    'HTTP_POSTMAN_TOKEN' => 'c793d2ff-075d-4c11-92f8-767f7681792a'
+    'HTTP_HOST' => 'localhost:8000'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '736'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Debian) Server at localhost Port 8000</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '8000'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/app/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/app/web/index.php'
+    'REMOTE_PORT' => '51906'
+    'REDIRECT_URL' => '/api/applications/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/applications/index'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1710187666.9064
+    'REQUEST_TIME' => 1710187666
+    'argv' => []
+    'argc' => 0
+]
+2024-03-11 20:22:34 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pizzaV.stocks' doesn't exist in /app/vendor/yiisoft/yii2/db/Command.php:1320
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/db/Command.php(1320): PDOStatement->execute()
+#1 /app/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->internalExecute('DELETE FROM `st...')
+#2 /app/seeders/StocksSeeder.php(18): yii\db\Command->execute()
+#3 /app/commands/SeederController.php(78): app\seeders\StocksSeeder->down()
+#4 [internal function]: app\commands\SeederController->actionExecuteSeedersDown()
+#5 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /app/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#7 /app/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('execute-seeders...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('execute-seeders...', Array)
+#9 /app/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('seeder/execute-...', Array)
+#10 /app/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('seeder/execute-...', Array)
+#11 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /app/yii(20): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pizzaV.stocks' doesn't exist
+The SQL being executed was: DELETE FROM `stocks` WHERE (`title`='pizza') AND (`description`='description') AND (`price`='21.00') in /app/vendor/yiisoft/yii2/db/Schema.php:676
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/db/Command.php(1325): yii\db\Schema->convertException(Object(PDOException), 'DELETE FROM `st...')
+#1 /app/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->internalExecute('DELETE FROM `st...')
+#2 /app/seeders/StocksSeeder.php(18): yii\db\Command->execute()
+#3 /app/commands/SeederController.php(78): app\seeders\StocksSeeder->down()
+#4 [internal function]: app\commands\SeederController->actionExecuteSeedersDown()
+#5 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /app/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#7 /app/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('execute-seeders...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('execute-seeders...', Array)
+#9 /app/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('seeder/execute-...', Array)
+#10 /app/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('seeder/execute-...', Array)
+#11 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /app/yii(20): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'pizzaV.stocks' doesn't exist
+)
+
+2024-03-11 20:22:34 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_ENABLE_XDEBUG' => '0'
+    'PHP_USER_ID' => '33'
+    'HOSTNAME' => '9cae3a466543'
+    'PHP_VERSION' => '7.4.33'
+    'APACHE_CONFDIR' => '/etc/apache2'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/app'
+    'HOME' => '/root'
+    'PHP_SHA256' => '924846abf93bc613815c55dd3f5809377813ac62a9ec4eb3778675b82a27b927'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'TERM' => 'linux'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.33.tar.xz'
+    'SHLVL' => '1'
+    'COMPOSER_ALLOW_SUPERUSER' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'APACHE_ENVVARS' => '/etc/apache2/envvars'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.33.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1710188554.5936
+    'REQUEST_TIME' => 1710188554
+    'argv' => [
+        0 => 'yii'
+        1 => 'seeder/execute-seeders-down'
+    ]
+    'argc' => 2
+]
+2024-03-11 20:37:15 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'description' at row 1 in /app/vendor/yiisoft/yii2/db/Command.php:1320
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/db/Command.php(1320): PDOStatement->execute()
+#1 /app/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->internalExecute('INSERT INTO `pr...')
+#2 /app/seeders/ProductSeeder.php(61): yii\db\Command->execute()
+#3 /app/commands/SeederController.php(64): app\seeders\ProductSeeder->up()
+#4 [internal function]: app\commands\SeederController->actionExecuteSeedersUp()
+#5 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /app/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#7 /app/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('execute-seeders...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('execute-seeders...', Array)
+#9 /app/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('seeder/execute-...', Array)
+#10 /app/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('seeder/execute-...', Array)
+#11 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /app/yii(20): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'description' at row 1
+The SQL being executed was: INSERT INTO `product` (`title`, `description`, `price`, `category_id`) VALUES ('Деревенская', 'Куриные кусочки, сладкий перец, моцарелла, красный лук, соус сладкий чили, соус альфре, огурчики, лук', 24, 1) in /app/vendor/yiisoft/yii2/db/Schema.php:676
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/db/Command.php(1325): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `pr...')
+#1 /app/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->internalExecute('INSERT INTO `pr...')
+#2 /app/seeders/ProductSeeder.php(61): yii\db\Command->execute()
+#3 /app/commands/SeederController.php(64): app\seeders\ProductSeeder->up()
+#4 [internal function]: app\commands\SeederController->actionExecuteSeedersUp()
+#5 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /app/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#7 /app/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('execute-seeders...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('execute-seeders...', Array)
+#9 /app/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('seeder/execute-...', Array)
+#10 /app/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('seeder/execute-...', Array)
+#11 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /app/yii(20): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 22001
+    [1] => 1406
+    [2] => Data too long for column 'description' at row 1
+)
+
+2024-03-11 20:37:15 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_ENABLE_XDEBUG' => '0'
+    'PHP_USER_ID' => '33'
+    'HOSTNAME' => '9cae3a466543'
+    'PHP_VERSION' => '7.4.33'
+    'APACHE_CONFDIR' => '/etc/apache2'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/app'
+    'HOME' => '/root'
+    'PHP_SHA256' => '924846abf93bc613815c55dd3f5809377813ac62a9ec4eb3778675b82a27b927'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'TERM' => 'linux'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.33.tar.xz'
+    'SHLVL' => '1'
+    'COMPOSER_ALLOW_SUPERUSER' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'APACHE_ENVVARS' => '/etc/apache2/envvars'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.33.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1710189435.0529
+    'REQUEST_TIME' => 1710189435
+    'argv' => [
+        0 => 'yii'
+        1 => 'seeder/execute-seeders-up'
+    ]
+    'argc' => 2
+]
+2024-03-11 20:37:42 [-][-][-][error][yii\db\IntegrityException] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`pizzaV`.`product`, CONSTRAINT `cat-id-categories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE) in /app/vendor/yiisoft/yii2/db/Command.php:1320
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/db/Command.php(1320): PDOStatement->execute()
+#1 /app/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->internalExecute('INSERT INTO `pr...')
+#2 /app/seeders/ProductSeeder.php(61): yii\db\Command->execute()
+#3 /app/commands/SeederController.php(64): app\seeders\ProductSeeder->up()
+#4 [internal function]: app\commands\SeederController->actionExecuteSeedersUp()
+#5 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /app/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#7 /app/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('execute-seeders...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('execute-seeders...', Array)
+#9 /app/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('seeder/execute-...', Array)
+#10 /app/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('seeder/execute-...', Array)
+#11 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /app/yii(20): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\IntegrityException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`pizzaV`.`product`, CONSTRAINT `cat-id-categories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE)
+The SQL being executed was: INSERT INTO `product` (`title`, `description`, `price`, `category_id`) VALUES ('Чикен Бомбони', 'Куриные кусочки, сладкий перец, моцарелла, красный лук, соус сладкий чили, соус альфре', 20, 1) in /app/vendor/yiisoft/yii2/db/Schema.php:676
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/db/Command.php(1325): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `pr...')
+#1 /app/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->internalExecute('INSERT INTO `pr...')
+#2 /app/seeders/ProductSeeder.php(61): yii\db\Command->execute()
+#3 /app/commands/SeederController.php(64): app\seeders\ProductSeeder->up()
+#4 [internal function]: app\commands\SeederController->actionExecuteSeedersUp()
+#5 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /app/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#7 /app/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('execute-seeders...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('execute-seeders...', Array)
+#9 /app/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('seeder/execute-...', Array)
+#10 /app/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('seeder/execute-...', Array)
+#11 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /app/yii(20): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1452
+    [2] => Cannot add or update a child row: a foreign key constraint fails (`pizzaV`.`product`, CONSTRAINT `cat-id-categories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE)
+)
+
+2024-03-11 20:37:42 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_ENABLE_XDEBUG' => '0'
+    'PHP_USER_ID' => '33'
+    'HOSTNAME' => '9cae3a466543'
+    'PHP_VERSION' => '7.4.33'
+    'APACHE_CONFDIR' => '/etc/apache2'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/app'
+    'HOME' => '/root'
+    'PHP_SHA256' => '924846abf93bc613815c55dd3f5809377813ac62a9ec4eb3778675b82a27b927'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'TERM' => 'linux'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.33.tar.xz'
+    'SHLVL' => '1'
+    'COMPOSER_ALLOW_SUPERUSER' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'APACHE_ENVVARS' => '/etc/apache2/envvars'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.33.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1710189462.1151
+    'REQUEST_TIME' => 1710189462
+    'argv' => [
+        0 => 'yii'
+        1 => 'seeder/execute-seeders-up'
+    ]
+    'argc' => 2
+]
+2024-03-11 20:39:17 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'description' at row 1 in /app/vendor/yiisoft/yii2/db/Command.php:1320
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/db/Command.php(1320): PDOStatement->execute()
+#1 /app/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->internalExecute('INSERT INTO `pr...')
+#2 /app/seeders/ProductSeeder.php(61): yii\db\Command->execute()
+#3 /app/commands/SeederController.php(64): app\seeders\ProductSeeder->up()
+#4 [internal function]: app\commands\SeederController->actionExecuteSeedersUp()
+#5 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /app/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#7 /app/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('execute-seeders...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('execute-seeders...', Array)
+#9 /app/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('seeder/execute-...', Array)
+#10 /app/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('seeder/execute-...', Array)
+#11 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /app/yii(20): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'description' at row 1
+The SQL being executed was: INSERT INTO `product` (`title`, `description`, `price`, `category_id`) VALUES ('Деревенская', 'Куриные кусочки, сладкий перец, моцарелла, красный лук, соус сладкий чили, соус альфре, огурчики, лук', 24, 1) in /app/vendor/yiisoft/yii2/db/Schema.php:676
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/db/Command.php(1325): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `pr...')
+#1 /app/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->internalExecute('INSERT INTO `pr...')
+#2 /app/seeders/ProductSeeder.php(61): yii\db\Command->execute()
+#3 /app/commands/SeederController.php(64): app\seeders\ProductSeeder->up()
+#4 [internal function]: app\commands\SeederController->actionExecuteSeedersUp()
+#5 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /app/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#7 /app/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('execute-seeders...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('execute-seeders...', Array)
+#9 /app/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('seeder/execute-...', Array)
+#10 /app/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('seeder/execute-...', Array)
+#11 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /app/yii(20): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 22001
+    [1] => 1406
+    [2] => Data too long for column 'description' at row 1
+)
+
+2024-03-11 20:39:17 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_ENABLE_XDEBUG' => '0'
+    'PHP_USER_ID' => '33'
+    'HOSTNAME' => '9cae3a466543'
+    'PHP_VERSION' => '7.4.33'
+    'APACHE_CONFDIR' => '/etc/apache2'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/app'
+    'HOME' => '/root'
+    'PHP_SHA256' => '924846abf93bc613815c55dd3f5809377813ac62a9ec4eb3778675b82a27b927'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'TERM' => 'linux'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.33.tar.xz'
+    'SHLVL' => '1'
+    'COMPOSER_ALLOW_SUPERUSER' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'APACHE_ENVVARS' => '/etc/apache2/envvars'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.33.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1710189557.1972
+    'REQUEST_TIME' => 1710189557
+    'argv' => [
+        0 => 'yii'
+        1 => 'seeder/execute-seeders-up'
+    ]
+    'argc' => 2
+]

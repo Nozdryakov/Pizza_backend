@@ -4,20 +4,24 @@ namespace app\seeders;
 
 use Yii;
 
-
 class CategoriesSeeder {
-    private array $fields = [
-        'title' => 'pizza',
+    private array $categories = [
+        'Пицца',
+        'Закуски',
+        'Десерты',
+        'Напитки',
+        'Комбо',
     ];
+
     public function up() {
-        for ($i = 1; $i <= 30; $i++) {
-            Yii::$app->db->createCommand()->insert('categories', $this->fields)->execute();
+        foreach ($this->categories as $category) {
+            Yii::$app->db->createCommand()->insert('categories', ['title' => $category])->execute();
         }
     }
 
     public function down() {
-        for ($i = 1; $i <= 30; $i++) {
-            Yii::$app->db->createCommand()->delete('categories', $this->fields)->execute();
+        foreach ($this->categories as $category) {
+            Yii::$app->db->createCommand()->delete('categories', ['title' => $category])->execute();
         }
     }
 }
