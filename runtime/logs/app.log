@@ -2344,3 +2344,175 @@ $_SERVER = [
     ]
     'argc' => 2
 ]
+2024-03-13 14:45:42 [-][-][-][error][yii\db\IntegrityException] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`pizzaV`.`product`, CONSTRAINT `cat-id-categories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE) in /app/vendor/yiisoft/yii2/db/Command.php:1320
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/db/Command.php(1320): PDOStatement->execute()
+#1 /app/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->internalExecute('INSERT INTO `pr...')
+#2 /app/seeders/ProductSeeder.php(98): yii\db\Command->execute()
+#3 /app/commands/SeederController.php(64): app\seeders\ProductSeeder->up()
+#4 [internal function]: app\commands\SeederController->actionExecuteSeedersUp()
+#5 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /app/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#7 /app/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('execute-seeders...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('execute-seeders...', Array)
+#9 /app/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('seeder/execute-...', Array)
+#10 /app/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('seeder/execute-...', Array)
+#11 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /app/yii(20): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\IntegrityException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`pizzaV`.`product`, CONSTRAINT `cat-id-categories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE)
+The SQL being executed was: INSERT INTO `product` (`title`, `description`, `price`, `category_id`) VALUES ('Чикен Бомбони', 'Куриные кусочки, сладкий перец, моцарелла, красный лук, соус сладкий чили, соус альфре', 20, 1) in /app/vendor/yiisoft/yii2/db/Schema.php:676
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/db/Command.php(1325): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `pr...')
+#1 /app/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->internalExecute('INSERT INTO `pr...')
+#2 /app/seeders/ProductSeeder.php(98): yii\db\Command->execute()
+#3 /app/commands/SeederController.php(64): app\seeders\ProductSeeder->up()
+#4 [internal function]: app\commands\SeederController->actionExecuteSeedersUp()
+#5 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /app/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#7 /app/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('execute-seeders...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('execute-seeders...', Array)
+#9 /app/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('seeder/execute-...', Array)
+#10 /app/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('seeder/execute-...', Array)
+#11 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /app/yii(20): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1452
+    [2] => Cannot add or update a child row: a foreign key constraint fails (`pizzaV`.`product`, CONSTRAINT `cat-id-categories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE)
+)
+
+2024-03-13 14:45:42 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_ENABLE_XDEBUG' => '0'
+    'PHP_USER_ID' => '33'
+    'HOSTNAME' => '9cae3a466543'
+    'PHP_VERSION' => '7.4.33'
+    'APACHE_CONFDIR' => '/etc/apache2'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/app'
+    'HOME' => '/root'
+    'PHP_SHA256' => '924846abf93bc613815c55dd3f5809377813ac62a9ec4eb3778675b82a27b927'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'TERM' => 'linux'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.33.tar.xz'
+    'SHLVL' => '1'
+    'COMPOSER_ALLOW_SUPERUSER' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'APACHE_ENVVARS' => '/etc/apache2/envvars'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.33.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1710341142.4328
+    'REQUEST_TIME' => 1710341142
+    'argv' => [
+        0 => 'yii'
+        1 => 'seeder/execute-seeders-up'
+    ]
+    'argc' => 2
+]
+2024-03-13 14:58:03 [-][-][-][error][yii\db\IntegrityException] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`pizzaV`.`product`, CONSTRAINT `cat-id-categories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE) in /app/vendor/yiisoft/yii2/db/Command.php:1320
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/db/Command.php(1320): PDOStatement->execute()
+#1 /app/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->internalExecute('INSERT INTO `pr...')
+#2 /app/seeders/ProductSeeder.php(123): yii\db\Command->execute()
+#3 /app/commands/SeederController.php(64): app\seeders\ProductSeeder->up()
+#4 [internal function]: app\commands\SeederController->actionExecuteSeedersUp()
+#5 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /app/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#7 /app/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('execute-seeders...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('execute-seeders...', Array)
+#9 /app/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('seeder/execute-...', Array)
+#10 /app/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('seeder/execute-...', Array)
+#11 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /app/yii(20): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\IntegrityException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`pizzaV`.`product`, CONSTRAINT `cat-id-categories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE)
+The SQL being executed was: INSERT INTO `product` (`title`, `description`, `price`, `category_id`) VALUES ('Чикен Бомбони', 'Куриные кусочки, сладкий перец, моцарелла, красный лук, соус сладкий чили, соус альфре', 20, 1) in /app/vendor/yiisoft/yii2/db/Schema.php:676
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/db/Command.php(1325): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `pr...')
+#1 /app/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->internalExecute('INSERT INTO `pr...')
+#2 /app/seeders/ProductSeeder.php(123): yii\db\Command->execute()
+#3 /app/commands/SeederController.php(64): app\seeders\ProductSeeder->up()
+#4 [internal function]: app\commands\SeederController->actionExecuteSeedersUp()
+#5 /app/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /app/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#7 /app/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction('execute-seeders...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Module.php(552): yii\console\Controller->runAction('execute-seeders...', Array)
+#9 /app/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('seeder/execute-...', Array)
+#10 /app/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('seeder/execute-...', Array)
+#11 /app/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /app/yii(20): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1452
+    [2] => Cannot add or update a child row: a foreign key constraint fails (`pizzaV`.`product`, CONSTRAINT `cat-id-categories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE)
+)
+
+2024-03-13 14:58:03 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_ENABLE_XDEBUG' => '0'
+    'PHP_USER_ID' => '33'
+    'HOSTNAME' => '9cae3a466543'
+    'PHP_VERSION' => '7.4.33'
+    'APACHE_CONFDIR' => '/etc/apache2'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/app'
+    'HOME' => '/root'
+    'PHP_SHA256' => '924846abf93bc613815c55dd3f5809377813ac62a9ec4eb3778675b82a27b927'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'TERM' => 'linux'
+    'PHP_URL' => 'https://www.php.net/distributions/php-7.4.33.tar.xz'
+    'SHLVL' => '1'
+    'COMPOSER_ALLOW_SUPERUSER' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'APACHE_ENVVARS' => '/etc/apache2/envvars'
+    'PATH' => '/app:/app/vendor/bin:/root/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-7.4.33.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1710341883.1137
+    'REQUEST_TIME' => 1710341883
+    'argv' => [
+        0 => 'yii'
+        1 => 'seeder/execute-seeders-up'
+    ]
+    'argc' => 2
+]
