@@ -1,4 +1,4 @@
-FROM ubuntu:latest
-LABEL authors="artemiy"
+FROM yiisoftware/yii2-php:7.4-apache
 
-ENTRYPOINT ["top", "-b"]
+# Установка расширения mysqli
+RUN docker-php-ext-install mysqli
