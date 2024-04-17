@@ -2,12 +2,26 @@ version: '2'
 services:
   php:
     image: yiisoftware/yii2-php:7.4-apache
+    restart: always
     volumes:
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
       - ./:/app:delegated
       - ./migrations:/app/migrations
     ports:
       - '8000:80'
+  php-cli:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      - ./:/app:delegated
+      - ./scripts:/app/scripts:delegated
+    depends_on:
+      - php
+      - db
+    command: sh -c "php /app/scripts/wait_for_db.php && php yii migrate --interactive=0 && php yii seeder/execute-seeders-up"
+
   db:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
@@ -16,20 +30,21 @@ services:
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: root
+      MYSQL_DATABASE: pizzaV
     ports:
       - '7776:3306'
 
   adminer:
-      image: adminer
-      restart: always
-      ports:
-        - '8080:8080'
+    image: adminer
+    restart: always
+    ports:
+      - '8080:8080'
   phpmyadmin:
-      image: phpmyadmin/phpmyadmin
-      container_name: phpmyadmin
-      environment:
-        PMA_HOST: db
-        PMA_PORT: 3306
-      ports:
-        - 7760:80
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+    ports:
+      - 7760:80

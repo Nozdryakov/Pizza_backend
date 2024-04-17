@@ -39,10 +39,10 @@ class m220919_163516_create_categories_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('{{%categories}}');
         $this->dropForeignKey(
-            'cat-id-product',
+            'cat-id-categories',
             'product'
         );
+        $this->dropTable('{{%categories}}');
     }
 }
