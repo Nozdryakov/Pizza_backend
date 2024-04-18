@@ -15,7 +15,6 @@ class m220920_124511_create_popular_table extends Migration
         $this->createTable('{{%popular}}', [
             'popular_id' => $this->primaryKey(),
             'image' => $this->string(120)->Null(),
-            'num_of_orders' => $this->integer()->unsigned()->null(),
             'product_id' => $this->integer()->notNull()->unique(),
         ]);
 

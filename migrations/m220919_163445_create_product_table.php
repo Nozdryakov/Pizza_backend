@@ -18,6 +18,7 @@ class m220919_163445_create_product_table extends Migration
             'title' => $this->string(90)->notNull(),
             'description' => $this->string(600)->notNull(),
             'price' => $this->decimal(5,2)->notNull(),
+            'num_of_orders' => $this->integer()->unsigned()->null(),
             'category_id' => $this->integer()->notNull(),
         ]);
 
