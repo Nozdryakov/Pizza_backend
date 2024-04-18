@@ -13,19 +13,32 @@ class m220920_124511_create_popular_table extends Migration
     public function safeUp()
     {
         $this->createTable('{{%popular}}', [
-            'id' => $this->primaryKey(),
+            'popular_id' => $this->primaryKey(),
             'image' => $this->string(120)->Null(),
-            'title' => $this->string(30)->notNull(),
-            'description' => $this->string(90)->notNull(),
-            'price' => $this->decimal()->notNull(),
+            'num_of_orders' => $this->integer()->unsigned()->null(),
+            'product_id' => $this->integer()->notNull()->unique(),
         ]);
+
+        $this->addForeignKey(
+            'fk-popular-product',
+            'popular',
+            'product_id',
+            'product',
+            'product_id',
+            'CASCADE',
+        );
     }
+
 
     /**
      * {@inheritdoc}
      */
     public function safeDown()
     {
+        $this->dropForeignKey(
+            'fk-popular-product',
+            'popular'
+        );
         $this->dropTable('{{%popular}}');
     }
 }

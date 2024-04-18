@@ -13,23 +13,16 @@ class m220919_163516_create_categories_table extends Migration
     public function safeUp()
     {
         $this->createTable('{{%categories}}', [
-            'id' => $this->primaryKey(),
-            'title' => $this->string(30)->notNull(),
+            'category_id' => $this->primaryKey(),
+            'title' => $this->string(80)->notNull(),
         ]);
-
-        // creates index for column `author_id`
-        $this->createIndex(
-            'idx-product_id',
-            'product',
-            'category_id'
-        );
 
         $this->addForeignKey(
             'cat-id-categories',
             'product',
             'category_id',
             'categories',
-            'id',
+            'category_id',
             'CASCADE',
         );
     }

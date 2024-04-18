@@ -15,10 +15,18 @@ class m220920_124536_create_stocks_table extends Migration
         $this->createTable('{{%stocks}}', [
             'id' => $this->primaryKey(),
             'image' => $this->string(120)->Null(),
-            'title' => $this->string(30)->notNull(),
-            'description' => $this->string(90)->notNull(),
-            'price' => $this->decimal()->notNull(),
+            'discount' => $this->decimal(5,2)->notNull(),
+            'product_id' => $this->integer()->notNull()->unique(),
+
         ]);
+        $this->addForeignKey(
+            'fk-stocks-product',
+            'stocks',
+            'product_id',
+            'product',
+            'product_id',
+            'CASCADE',
+        );
     }
 
     /**
@@ -26,6 +34,10 @@ class m220920_124536_create_stocks_table extends Migration
      */
     public function safeDown()
     {
+        $this->dropForeignKey(
+            'fk-stocks-product',
+            'stocks'
+        );
         $this->dropTable('{{%stocks}}');
     }
 }
