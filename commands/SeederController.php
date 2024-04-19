@@ -9,9 +9,9 @@ class SeederController extends \yii\console\Controller
 
     private array $listClassSeeder = [
         'CategoriesSeeder',
+        'ProductSeeder',
         'UsersSeeder',
         'StocksSeeder',
-        'ProductSeeder',
         'PopularSeeder',
     ];
 

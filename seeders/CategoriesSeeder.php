@@ -20,8 +20,6 @@ class CategoriesSeeder {
     }
 
     public function down() {
-        foreach ($this->categories as $category) {
-            Yii::$app->db->createCommand()->delete('categories', ['title' => $category])->execute();
-        }
+        Yii::$app->db->createCommand()->delete('categories')->execute();
     }
 }

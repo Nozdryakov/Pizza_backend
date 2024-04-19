@@ -6,15 +6,45 @@ use Yii;
 
 class StocksSeeder {
     private array $fields = [
-        'title' => 'pizza',
-        'description' =>'description',
-        'price' => '21.00',
+        [
+            'image' => '/path',
+            'discount' => '10',
+            'product_id' => 1,
+        ],
+        [
+            'image' => '/path',
+            'discount' => '30',
+            'product_id' => 2,
+        ],
+        [
+            'image' => '/path',
+            'discount' => '5',
+            'product_id' => 3,
+        ],
+        [
+            'image' => '/path',
+            'discount' => '5',
+            'product_id' => 4,
+        ],
+        [
+            'image' => '/path',
+            'discount' => '50',
+            'product_id' => 5,
+        ],
+        [
+            'image' => '/path',
+            'discount' => '10',
+            'product_id' => 6,
+        ],
     ];
+
     public function up() {
-        Yii::$app->db->createCommand()->insert('stocks', $this->fields)->execute();
+        foreach ($this->fields as $item) {
+            Yii::$app->db->createCommand()->insert('stocks', $item)->execute();
+        }
     }
 
     public function down() {
-        Yii::$app->db->createCommand()->delete('stocks', $this->fields)->execute();
+        Yii::$app->db->createCommand()->delete('stocks')->execute();
     }
 }

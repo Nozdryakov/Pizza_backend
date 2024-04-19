@@ -17,15 +17,6 @@ class m220920_124511_create_popular_table extends Migration
             'image' => $this->string(120)->Null(),
             'product_id' => $this->integer()->notNull()->unique(),
         ]);
-
-        $this->addForeignKey(
-            'fk-popular-product',
-            'popular',
-            'product_id',
-            'product',
-            'product_id',
-            'CASCADE',
-        );
     }
 
 
@@ -34,10 +25,6 @@ class m220920_124511_create_popular_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropForeignKey(
-            'fk-popular-product',
-            'popular'
-        );
         $this->dropTable('{{%popular}}');
     }
 }

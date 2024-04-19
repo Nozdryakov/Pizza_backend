@@ -17,14 +17,6 @@ class m220919_163516_create_categories_table extends Migration
             'title' => $this->string(80)->notNull(),
         ]);
 
-        $this->addForeignKey(
-            'cat-id-categories',
-            'product',
-            'category_id',
-            'categories',
-            'category_id',
-            'CASCADE',
-        );
     }
 
     /**
@@ -32,10 +24,6 @@ class m220919_163516_create_categories_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropForeignKey(
-            'cat-id-categories',
-            'product'
-        );
         $this->dropTable('{{%categories}}');
     }
 }

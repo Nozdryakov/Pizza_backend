@@ -6,15 +6,39 @@ use Yii;
 
 class PopularSeeder {
     private array $fields = [
-        'title' => 'pizza',
-        'description' =>'description',
-        'price' => '21.00',
+        [
+            'image' => '/path',
+            'product_id' => 6,
+        ],
+        [
+            'image' => '/path',
+            'product_id' => 10,
+        ],
+        [
+            'image' => '/path',
+            'product_id' => 11,
+        ],
+        [
+            'image' => '/path',
+            'product_id' => 1,
+        ],
+        [
+            'image' => '/path',
+            'product_id' => 2,
+        ],
+        [
+            'image' => '/path',
+            'product_id' => 3,
+        ],
     ];
+
     public function up() {
-        Yii::$app->db->createCommand()->insert('popular', $this->fields)->execute();
+        foreach ($this->fields as $item) {
+            Yii::$app->db->createCommand()->insert('popular', $item)->execute();
+        }
     }
 
     public function down() {
-        Yii::$app->db->createCommand()->delete('popular', $this->fields)->execute();
+        Yii::$app->db->createCommand()->delete('popular')->execute();
     }
 }

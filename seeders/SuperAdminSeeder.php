@@ -17,6 +17,6 @@ class SuperAdminSeeder {
     }
 
     public function down() {
-        Yii::$app->db->createCommand()->delete('users', $this->fieldsSuperAdmin)->execute();
+        Yii::$app->db->createCommand()->delete('users')->execute();
     }
 }
