@@ -99,17 +99,17 @@ class AdminController extends Controller
         $this->uploadImageIdStocksUseCase=$uploadImageIdStocksUseCase;
     }
 
-    public function behaviors(): array
-    {
-        $behaviors = parent::behaviors();
-        $behaviors['authenticator'] = [
-            'class' => CompositeAuth::class,
-            'authMethods' => [
-                HttpBearerAuth::class,
-            ],
-        ];
-        return $behaviors;
-   }
+//    public function behaviors(): array
+//    {
+//        $behaviors = parent::behaviors();
+//        $behaviors['authenticator'] = [
+//            'class' => CompositeAuth::class,
+//            'authMethods' => [
+//                HttpBearerAuth::class,
+//            ],
+//        ];
+//        return $behaviors;
+//   }
 
     public function actionIndex():array {
         return [
@@ -195,7 +195,7 @@ class AdminController extends Controller
      */
     public function actionDeleteProduct(): array
     {
-        $productId = Yii::$app->request->post('id');
+        $productId = Yii::$app->request->post('product_id');
 
         if (empty($productId)) {
             return [
@@ -225,7 +225,7 @@ class AdminController extends Controller
 
         if ($model->load(Yii::$app->request->post(), '') && $model->validate() || Yii::$app->request->isPost) {
             extract(Yii::$app->request->post());
-            $image = $this->setByStorageImageUseCase->execute();
+//            $image = $this->setByStorageImageUseCase->execute();
             $this->createProductUseCase->execute($title, $description, $price,$image,$category_id);
 
             return [
@@ -245,11 +245,12 @@ class AdminController extends Controller
         $status = false;
         if ($model->load(Yii::$app->request->post(), '') && $model->validate() || Yii::$app->request->isPost) {
             extract(Yii::$app->request->post());
-            $this->updateProductUseCase->execute($id, $title, $description, $price,$category_id);
+            $this->updateProductUseCase->execute($product_id, $title, $description, $price);
             $path = $this->setByStorageImageUseCase->execute();
-            $id = Yii::$app->request->post('id');
+            $id = Yii::$app->request->post('product_id');
             $id = $id ? trim($id) : '';
             $status = $this->uploadImageIdProductUseCase->execute($path, $id);
+            $status = true;
         }
         if ($status) {
             return [

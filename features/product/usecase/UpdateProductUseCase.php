@@ -15,9 +15,9 @@ class UpdateProductUseCase
         $this->updateRepository = $updateRepository;
     }
 
-    public function execute($id, $title,$description,$price,$category_id)
+    public function execute($product_id, $title,$description,$price)
     {
-        return $this->updateRepository->itemUpdate($id,$title,$description,$price, $category_id);
+        return $this->updateRepository->itemUpdate($product_id,$title,$description,$price);
     }
 
 }

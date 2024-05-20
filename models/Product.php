@@ -38,7 +38,7 @@ class Product extends \yii\db\ActiveRecord
             [['category_id'], 'integer'],
             [['title'], 'string', 'max' => 30],
             [['description'], 'string', 'max' => 90],
-            [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Categories::class, 'targetAttribute' => ['category_id' => 'id']],
+            [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Categories::class, 'targetAttribute' => ['category_id' => 'category_id']],
         ];
     }
 

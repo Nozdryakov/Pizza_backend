@@ -13,8 +13,8 @@ class SetByStorageImageUseCase
         $image = '';
 
         foreach ($uploads as $file) {
-            $file->saveAs('images/' . $file->name);
-            $image = 'images/'. $file->name;
+            $file->saveAs('images/products/' . $file->name);
+            $image =  $file->name;
         }
 
         return $image;

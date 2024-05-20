@@ -33,9 +33,9 @@ class ApplicationController extends Controller
 
     public function actionIndex():array {
         return [
-            'stocks' => $this->allStocksUseCase->execute(),
+//            'stocks' => $this->allStocksUseCase->execute(),
             'products' => $this->allProductsUseCase->execute(),
-            'populars' => $this->allPopularUseCase->execute(),
+//            'populars' => $this->allPopularUseCase->execute(),
         ];
     }
 

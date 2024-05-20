@@ -21,8 +21,8 @@ class DeleteProductUseCase
      * @throws StaleObjectException
      * @throws \Throwable
      */
-    public function execute(int $id)
+    public function execute(int $product_id)
     {
-        return $this->deleteRepository->itemDelete($id);
+        return $this->deleteRepository->itemDelete($product_id);
     }
 }

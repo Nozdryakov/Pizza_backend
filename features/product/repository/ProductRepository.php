@@ -25,16 +25,15 @@ class ProductRepository implements ProductInterface, DeleteProductInterface
         $product->category_id = $category_id;
         return $product->save();
     }
-    public function itemUpdate($id,string $title, string $description,string $price, int $category_id) : bool
+    public function itemUpdate($product_id,string $title, string $description,string $price) : bool
     {
-        $product = Product::findOne($id);
+        $product = Product::findOne($product_id);
 
         if (empty($product)) return false;
 
         $product->title = $title;
         $product->description = $description;
         $product->price = $price;
-        $product->category_id = $category_id;
         return $product->save();
     }
     public function uploadImageId(string $image, string $id) : bool
@@ -51,9 +50,9 @@ class ProductRepository implements ProductInterface, DeleteProductInterface
      * @throws StaleObjectException
      * @throws \Throwable
      */
-    public function itemDelete($id)
+    public function itemDelete($product_id)
     {
-        $product = Product::findOne($id);
+        $product = Product::findOne(['product_id' => $product_id]);;
 
         if (empty($product)) return false;
 
