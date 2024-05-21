@@ -225,7 +225,7 @@ class AdminController extends Controller
 
         if ($model->load(Yii::$app->request->post(), '') && $model->validate() || Yii::$app->request->isPost) {
             extract(Yii::$app->request->post());
-//            $image = $this->setByStorageImageUseCase->execute();
+            $image = $this->setByStorageImageUseCase->execute();
             $this->createProductUseCase->execute($title, $description, $price,$image,$category_id);
 
             return [
