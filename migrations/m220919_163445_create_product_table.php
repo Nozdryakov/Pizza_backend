@@ -18,6 +18,7 @@ class m220919_163445_create_product_table extends Migration
             'title' => $this->string(90)->notNull(),
             'description' => $this->string(600)->notNull(),
             'price' => $this->decimal(7,2)->notNull(),
+            'visible' => $this->tinyInteger(1)->defaultValue(0)->notNull(),
             'category_id' => $this->integer()->notNull(),
         ]);
 

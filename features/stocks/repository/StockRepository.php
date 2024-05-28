@@ -4,6 +4,7 @@ namespace app\features\stocks\repository;
 
 use app\features\stocks\DeleteStocksInterface;
 use app\models\Popular;
+use app\models\Product;
 use app\models\Stocks;
 use yii\db\StaleObjectException;
 
@@ -12,7 +13,11 @@ class StockRepository implements DeleteStocksInterface
 {
     public function getListAllStocks(): array
     {
-       return Stocks::find()->all();
+        return Product::find()
+            ->joinWith('stocks')
+            ->where(['is not', 'stocks.stock_id', null])
+            ->asArray()
+            ->all();
     }
     public function itemCreate(string $title, string $description,string $price, string $image) : bool
     {

@@ -33,12 +33,16 @@ class ApplicationController extends Controller
 
     public function actionIndex():array {
         return [
-//            'stocks' => $this->allStocksUseCase->execute(),
+
             'products' => $this->allProductsUseCase->execute(),
 //            'populars' => $this->allPopularUseCase->execute(),
         ];
     }
-
+    public function actionGetStocks():array{
+        return [
+            'stocks' => $this->allStocksUseCase->execute()
+        ];
+    }
     public function actionHandlerOrder(): array
     {
         $model = new HandlerOrder();

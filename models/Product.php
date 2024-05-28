@@ -48,7 +48,7 @@ class Product extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
+            'product_id' => 'Product_Id',
             'image' => 'Image',
             'title' => 'Title',
             'description' => 'Description',
@@ -62,8 +62,12 @@ class Product extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getCategory()
+//    public function getCategory()
+//    {
+//        return $this->hasOne(Categories::class, ['id' => 'category_id']);
+//    }
+    public function getStocks()
     {
-        return $this->hasOne(Categories::class, ['id' => 'category_id']);
+        return $this->hasOne(Stocks::class, ['stock_id' => 'product_id']);
     }
 }

@@ -99,17 +99,17 @@ class AdminController extends Controller
         $this->uploadImageIdStocksUseCase=$uploadImageIdStocksUseCase;
     }
 
-//    public function behaviors(): array
-//    {
-//        $behaviors = parent::behaviors();
-//        $behaviors['authenticator'] = [
-//            'class' => CompositeAuth::class,
-//            'authMethods' => [
-//                HttpBearerAuth::class,
-//            ],
-//        ];
-//        return $behaviors;
-//   }
+    public function behaviors(): array
+    {
+        $behaviors = parent::behaviors();
+        $behaviors['authenticator'] = [
+            'class' => CompositeAuth::class,
+            'authMethods' => [
+                HttpBearerAuth::class,
+            ],
+        ];
+        return $behaviors;
+    }
 
     public function actionIndex():array {
         return [

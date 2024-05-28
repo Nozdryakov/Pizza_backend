@@ -82,6 +82,11 @@ $config = [
                 ],
                 [
                     'class' => \yii\rest\UrlRule::class,
+                    'controller' => ['auth'],
+                    'prefix' => '',
+                ],
+                [
+                    'class' => \yii\rest\UrlRule::class,
                     'controller' => ['stock'],
                     'prefix' => '',
                 ],
@@ -102,6 +107,7 @@ $config = [
                     'extraPatterns' => [
                         'POST handler' => 'handler-order',
                         'GET  index'=> 'index', // PATH url => action controller,
+                        'GET  get-stocks' => 'get-stocks'
                     ],
                 ],
                 [
@@ -217,7 +223,16 @@ $config = [
                     ],
 
                 ],
-            ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'AuthAdmin/auth', // своя придумка => 'namespace/controller'
+                    'prefix' => '',
+                    'extraPatterns' => [
+                        'POST login' => 'login',
+                        'GET  index'=> 'index', // PATH url => action controller,
+                    ],
+                ],
+            ]
         ]
     ],
     'params' => $params,

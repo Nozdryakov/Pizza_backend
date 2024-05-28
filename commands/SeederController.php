@@ -2,6 +2,7 @@
 
 namespace app\commands;
 
+
 class SeederController extends \yii\console\Controller
 {
     private string $path = '/app/seeders/';
@@ -13,6 +14,7 @@ class SeederController extends \yii\console\Controller
         'UsersSeeder',
         'StocksSeeder',
         'PopularSeeder',
+        'SuperAdminSeeder',
     ];
 
     public function actionCreateSeeder($name)

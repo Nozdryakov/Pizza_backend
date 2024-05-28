@@ -7,32 +7,32 @@ use Yii;
 class StocksSeeder {
     private array $fields = [
         [
-            'image' => '/path',
+            'image' => 'stocks-1.jpg',
             'discount' => '10',
             'product_id' => 1,
         ],
         [
-            'image' => '/path',
+            'image' => 'stocks-2.jpg',
             'discount' => '30',
             'product_id' => 2,
         ],
         [
-            'image' => '/path',
+            'image' => 'stocks-3.jpg',
             'discount' => '5',
             'product_id' => 3,
         ],
         [
-            'image' => '/path',
+            'image' => 'stocks-4.jpg',
             'discount' => '5',
             'product_id' => 4,
         ],
         [
-            'image' => '/path',
+            'image' => 'stocks-5.jpg',
             'discount' => '50',
             'product_id' => 5,
         ],
         [
-            'image' => '/path',
+            'image' => 'stocks-6.jpg',
             'discount' => '10',
             'product_id' => 6,
         ],

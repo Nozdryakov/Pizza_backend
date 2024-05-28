@@ -17,4 +17,5 @@ class Stocks extends ActiveRecord
     {
         return 'stocks';
     }
+
 }

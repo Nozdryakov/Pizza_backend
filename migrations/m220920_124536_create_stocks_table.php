@@ -13,7 +13,7 @@ class m220920_124536_create_stocks_table extends Migration
     public function safeUp()
     {
         $this->createTable('{{%stocks}}', [
-            'id' => $this->primaryKey(),
+            'stock_id' => $this->primaryKey(),
             'image' => $this->string(120)->Null(),
             'discount' => $this->decimal(5,2)->notNull(),
             'product_id' => $this->integer()->notNull()->unique(),
