@@ -6,10 +6,10 @@ use Yii;
 
 class CategoriesSeeder {
     private array $categories = [
-        'Пицца',
+        'Піца',
         'Закуски',
-        'Десерты',
-        'Напитки',
+        'Десерти',
+        'Напої',
         'Комбо',
     ];
 
