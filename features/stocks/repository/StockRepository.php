@@ -6,6 +6,7 @@ use app\features\stocks\DeleteStocksInterface;
 use app\models\Popular;
 use app\models\Product;
 use app\models\Stocks;
+use Yii;
 use yii\db\StaleObjectException;
 
 
@@ -19,18 +20,23 @@ class StockRepository implements DeleteStocksInterface
             ->asArray()
             ->all();
     }
-    public function itemCreate(string $title, string $description,string $price, string $image) : bool
+    public function itemCreate(string $image, string $discount, $product_id): bool
     {
         $stocks = new Stocks();
-        /** @var TYPE_NAME $stocks */
-        $stocks->title = $title;
-        /** @var TYPE_NAME $stocks */
         $stocks->image = $image;
-        $stocks->description = $description;
-        /** @var TYPE_NAME $stocks */
-        $stocks->price = $price;
-        return $stocks->save();
+        $stocks->discount = $discount;
+        $stocks->product_id = $product_id;
+
+        if ($stocks->save()) {
+            // Данные успешно сохранены
+            return true;
+        } else {
+            // Если данные не сохранены, можно вывести ошибки в журнал или лог
+            Yii::error('Failed to save stocks: ' . print_r($stocks->errors, true));
+            return false;
+        }
     }
+
     public function itemUpdate($id,string $title, string $description,string $price) : bool
     {
         $stocks = Stocks::findOne($id);

@@ -113,9 +113,9 @@ class AdminController extends Controller
 
     public function actionIndex():array {
         return [
-            'stocks' => $this->allStocksUseCase->execute(),
+//            'stocks' => $this->allStocksUseCase->execute(),
             'products' => $this->allProductsUseCase->execute(),
-            'populars' => $this->allPopularUseCase->execute(),
+//            'populars' => $this->allPopularUseCase->execute(),
         ];
     }
 
@@ -296,8 +296,8 @@ class AdminController extends Controller
 
         if ($model->load(Yii::$app->request->post(), '') && $model->validate() || Yii::$app->request->isPost) {
             extract(Yii::$app->request->post());
-            $image = $this->setByStorageImageUseCase->execute();
-            $this->createStocksUseCase->execute($title, $description, $price,$image);
+//            $image = $this->setByStorageImageUseCase->execute();
+            $this->createStocksUseCase->execute($image, $discount, $product_id);
 
             return [
                 'error' => false,
@@ -309,6 +309,7 @@ class AdminController extends Controller
             'send' => false,
         ];
     }
+
 
     public function actionUpdateStock(): array
     {

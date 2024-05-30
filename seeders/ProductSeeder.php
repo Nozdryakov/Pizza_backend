@@ -11,6 +11,7 @@ class ProductSeeder {
             'title' => 'Чікен Бомбоні',
             'description' => 'Курячі шматочки, солодкий перець, моцарела, червона цибуля, соус солодкий чилі, соус альфредо',
             'price' => 20,
+            'visible' => 1,
             'category_id' => 1,
         ],
         [
@@ -18,6 +19,7 @@ class ProductSeeder {
             'title' => 'Домашня',
             'description' => 'Курячі шматочки, солодкий перець, моцарела, червона цибуля, соус солодкий чилі, соус альфредо',
             'price' => 25,
+            'visible' => 1,
             'category_id' => 1,
         ],
         [
@@ -25,6 +27,7 @@ class ProductSeeder {
             'title' => 'Ранч Барбекю',
             'description' => 'Курячі шматочки, солодкий перець, червона цибуля, ковбаски',
             'price' => 23,
+            'visible' => 1,
             'category_id' => 1,
         ],
         [
@@ -32,6 +35,7 @@ class ProductSeeder {
             'title' => 'Чікен Роллі',
             'description' => 'Курячі шматочки, солодкий перець, моцарела, червона цибуля, соус солодкий чилі, соус альфредо',
             'price' => 26,
+            'visible' => 1,
             'category_id' => 1,
         ],
         [
@@ -39,6 +43,7 @@ class ProductSeeder {
             'title' => 'Барбекю Нью',
             'description' => 'Курячі шматочки, солодкий перець, моцарела, червона цибуля, соус солодкий чилі, соус альфредо',
             'price' => 21,
+            'visible' => 1,
             'category_id' => 1,
         ],
         [
@@ -46,6 +51,7 @@ class ProductSeeder {
             'title' => 'Селянська',
             'description' => 'Курячі шматочки, солодкий перець, моцарела, червона цибуля, соус солодкий чилі, соус альфредо, огірочки, цибуля',
             'price' => 24,
+            'visible' => 1,
             'category_id' => 1,
         ],
         [
@@ -53,6 +59,7 @@ class ProductSeeder {
             'title' => '8 половинок',
             'description' => 'Курячі шматочки, солодкий перець, червона цибуля, ковбаски, перець, сир Пармезан',
             'price' => 28,
+            'visible' => 1,
             'category_id' => 1,
         ],
         [
@@ -60,6 +67,7 @@ class ProductSeeder {
             'title' => 'Італійська',
             'description' => 'Курячі шматочки, солодкий перець, моцарела, червона цибуля, соус солодкий чилі, соус альфредо',
             'price' => 18,
+            'visible' => 1,
             'category_id' => 1,
         ],
         // Закуски
@@ -68,6 +76,7 @@ class ProductSeeder {
             'title' => 'Курячі шматочки',
             'description' => 'Курячі шматочки, солодкий перець, моцарела, червона цибуля, соус солодкий чилі, соус альфредо',
             'price' => 100,
+            'visible' => 1,
             'category_id' => 2,
         ],
         [
@@ -75,6 +84,7 @@ class ProductSeeder {
             'title' => 'Закуска Лечо',
             'description' => 'Курячі шматочки, солодкий перець, моцарела, червона цибуля, соус солодкий чилі, соус альфредо',
             'price' => 86,
+            'visible' => 1,
             'category_id' => 2,
         ],
         [
@@ -82,6 +92,7 @@ class ProductSeeder {
             'title' => 'Грибна закуска',
             'description' => 'Курячі шматочки, солодкий перець, червона цибуля, ковбаски',
             'price' => 77,
+            'visible' => 1,
             'category_id' => 2,
         ],
         [
@@ -89,6 +100,7 @@ class ProductSeeder {
             'title' => 'Деруни',
             'description' => 'Курячі шматочки, солодкий перець, моцарела, червона цибуля, соус солодкий чилі, соус альфредо',
             'price' => 90,
+            'visible' => 1,
             'category_id' => 2,
         ],
         [
@@ -96,6 +108,7 @@ class ProductSeeder {
             'title' => 'Паста Карбонара',
             'description' => 'Курячі шматочки, солодкий перець, моцарела, червона цибуля, соус солодкий чилі, соус альфредо',
             'price' => 120,
+            'visible' => 1,
             'category_id' => 2,
         ],
         [
@@ -103,6 +116,7 @@ class ProductSeeder {
             'title' => 'Картопля Фрі',
             'description' => 'Хрустка картопля фрі з зеленим лучком',
             'price' => 50,
+            'visible' => 1,
             'category_id' => 2,
         ],
         // Десерти
@@ -111,6 +125,7 @@ class ProductSeeder {
             'title' => 'Маффіни Шоко',
             'description' => 'Надзвичайні шоколадні маффіни з шматочками ананаса',
             'price' => 80,
+            'visible' => 1,
             'category_id' => 3,
         ],
         [
@@ -118,6 +133,7 @@ class ProductSeeder {
             'title' => 'Чиз вишневий',
             'description' => 'Смачний вишневий чизкейк, приготований за всіма стандартами кулінарії',
             'price' => 90,
+            'visible' => 1,
             'category_id' => 3,
         ],
         [
@@ -125,6 +141,7 @@ class ProductSeeder {
             'title' => 'Сирники з малиною',
             'description' => 'Малинові сирники за рецептом наших бабусь',
             'price' => 85,
+            'visible' => 1,
             'category_id' => 3,
         ],
         [
@@ -132,6 +149,7 @@ class ProductSeeder {
             'title' => 'Сирники',
             'description' => 'Стандартні сирники за рецептом багаторічних традицій',
             'price' => 75,
+            'visible' => 1,
             'category_id' => 3,
         ],
         // Напої
@@ -140,6 +158,7 @@ class ProductSeeder {
             'title' => 'Pepsi',
             'description' => 'Надзвичайні шоколадні маффіни з шматочками ананаса',
             'price' => 80,
+            'visible' => 1,
             'category_id' => 4,
         ],
         [
@@ -147,6 +166,7 @@ class ProductSeeder {
             'title' => 'Mirinda',
             'description' => 'Смачний вишневий чизкейк, приготований за всіма стандартами кулінарії',
             'price' => 50,
+            'visible' => 1,
             'category_id' => 4,
         ],
         [
@@ -154,6 +174,7 @@ class ProductSeeder {
             'title' => 'Aqua Water',
             'description' => 'Малинові сирники за рецептом наших бабусь',
             'price' => 35,
+            'visible' => 1,
             'category_id' => 4,
         ],
         [
@@ -161,6 +182,7 @@ class ProductSeeder {
             'title' => 'Сік',
             'description' => 'Стандартні сирники за рецептом багаторічних традицій',
             'price' => 65,
+            'visible' => 1,
             'category_id' => 4,
         ],
         // Комбо
@@ -169,13 +191,15 @@ class ProductSeeder {
             'title' => 'Шаурма Класик+Топ',
             'description' => 'Надзвичайні шоколадні маффіни з шматочками ананаса',
             'price' => 160,
+            'visible' => 1,
             'category_id' => 5,
         ],
         [
             'image' => 'combo-2.jpg',
-            'title' => 'Соус+Соус',
+            'title' => 'Сирний соус',
             'description' => 'Смачний соус',
             'price' => 100,
+            'visible' => 1,
             'category_id' => 5,
         ],
         [
@@ -183,8 +207,17 @@ class ProductSeeder {
             'title' => 'Сік + Аква',
             'description' => 'Сік і вода',
             'price' => 95,
+            'visible' => 1,
             'category_id' => 5,
         ],
+        [
+            'image' => '',
+            'title' => 'Друга шаурма у подарунок',
+            'description' => 'акція',
+            'price' => 170,
+            'visible' => 0,
+            'category_id' => 5,
+        ]
     ];
 
 

@@ -9,11 +9,12 @@ class StockForm extends Model
     public $title;
     public $description;
     public $price;
+    public $discount;
 
     public function rules()
     {
         return [
-            [['title','description', 'price'], 'required'],
+            [['title','description', 'price', 'discount'], 'required'],
         ];
     }
 

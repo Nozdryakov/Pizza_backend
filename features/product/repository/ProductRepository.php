@@ -5,7 +5,7 @@ namespace app\features\product\repository;
 use app\features\product\DeleteProductInterface;
 use app\features\product\ProductInterface;
 use app\models\Categories;
-use app\models\Popular;
+
 use app\models\Product;
 use yii\db\StaleObjectException;
 

@@ -8,33 +8,33 @@ class StocksSeeder {
     private array $fields = [
         [
             'image' => 'stocks-1.jpg',
-            'discount' => '10',
+            'discount' => '15',
             'product_id' => 1,
         ],
         [
             'image' => 'stocks-2.jpg',
-            'discount' => '30',
-            'product_id' => 2,
+            'discount' => '0',
+            'product_id' => 26,
         ],
         [
             'image' => 'stocks-3.jpg',
-            'discount' => '5',
-            'product_id' => 3,
+            'discount' => '0',
+            'product_id' => 10,
         ],
         [
             'image' => 'stocks-4.jpg',
-            'discount' => '5',
+            'discount' => '0',
             'product_id' => 4,
         ],
         [
             'image' => 'stocks-5.jpg',
-            'discount' => '50',
-            'product_id' => 5,
+            'discount' => '0',
+            'product_id' => 9,
         ],
         [
             'image' => 'stocks-6.jpg',
-            'discount' => '10',
-            'product_id' => 6,
+            'discount' => '5',
+            'product_id' => 24,
         ],
     ];
 
