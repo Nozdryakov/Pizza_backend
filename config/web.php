@@ -124,7 +124,8 @@ $config = [
                     'controller' => 'admin/admin',
                     'prefix' => '',
                     'extraPatterns' => [
-                        'GET  index'=> 'index', // PATH url => action controller,
+                        'GET  index'=> 'index',
+                        'GET get-stocks'=>'get-stocks'// PATH url => action controller,
                     ],
                 ],
                 [
@@ -165,7 +166,8 @@ $config = [
                     'controller' => 'admin/admin',
                     'prefix' => '',
                     'extraPatterns' => [
-                        'POST  insert-product'=> 'insert-product', // PATH url => action controller,
+                        'POST  insert-product'=> 'insert-product',
+                        'POST update-price' =>'update-price'
                     ],
                 ],
                 [

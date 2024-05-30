@@ -22,6 +22,7 @@ use app\features\product\usecase\UploadImageIdProductUseCase;
 use app\features\product\usecase\DeleteProductUseCase;
 use app\features\product\usecase\CreateProductUseCase;
 use app\features\product\usecase\UpdateProductUseCase;
+use app\features\product\usecase\SetByStorageImageProductUseCase;
 //stocks items
 use app\models\StockForm;
 use app\features\stocks\usecase\GetAllStocksUseCase;
@@ -29,6 +30,8 @@ use app\features\stocks\usecase\DeleteStocksUseCase;
 use app\features\stocks\usecase\CreateStocksUseCase;
 use app\features\stocks\usecase\UpdateStocksUseCase;
 use app\features\stocks\usecase\UploadImageIdStocksUseCase;
+use app\features\stocks\usecase\SetByStorageImageStockUseCase;
+use app\features\product\usecase\UpdateProductPriceWithDiscount;
 
 class AdminController extends Controller
 {
@@ -45,12 +48,15 @@ class AdminController extends Controller
     private CreateProductUseCase $createProductUseCase;
     private UpdateProductUseCase $updateProductUseCase;
     private UploadImageIdProductUseCase $uploadImageIdProductUseCase;
+    private SetByStorageImageProductUseCase $setByStorageImageProductUseCase;
 //  stocks items
     private GetAllStocksUseCase $allStocksUseCase;
     private DeleteStocksUseCase $deleteStocksUseCase;
     private CreateStocksUseCase $createStocksUseCase;
     private UpdateStocksUseCase $updateStocksUseCase;
     private UploadImageIdStocksUseCase $uploadImageIdStocksUseCase;
+    private SetByStorageImageStockUseCase $setByStorageImageStockUseCase;
+    private UpdateProductPriceWithDiscount $updateProductPriceWithDiscount;
 
 
 
@@ -68,12 +74,16 @@ class AdminController extends Controller
         CreateProductUseCase $createProductUseCase,
         UpdateProductUseCase $updateProductUseCase,
         UploadImageIdProductUseCase $uploadImageIdProductUseCase,
+        SetByStorageImageProductUseCase $setByStorageImageProductUseCase,
     //  stocks items
         GetAllStocksUseCase $allStocksUseCase,
         DeleteStocksUseCase $deleteStocksUseCase,
         CreateStocksUseCase $createStocksUseCase,
         UpdateStocksUseCase $updateStocksUseCase,
-        UploadImageIdStocksUseCase $uploadImageIdStocksUseCase
+        UploadImageIdStocksUseCase $uploadImageIdStocksUseCase,
+        SetByStorageImageStockUseCase $setByStorageImageStockUseCase,
+        UpdateProductPriceWithDiscount $updateProductPriceWithDiscount
+
     )
 
     {
@@ -91,12 +101,15 @@ class AdminController extends Controller
         $this->createProductUseCase=$createProductUseCase;
         $this->updateProductUseCase=$updateProductUseCase;
         $this->uploadImageIdProductUseCase=$uploadImageIdProductUseCase;
+        $this->setByStorageImageProductUseCase=$setByStorageImageProductUseCase;
     //  stocks items
         $this->allStocksUseCase = $allStocksUseCase;
         $this->deleteStocksUseCase=$deleteStocksUseCase;
         $this->createStocksUseCase=$createStocksUseCase;
         $this->updateStocksUseCase=$updateStocksUseCase;
         $this->uploadImageIdStocksUseCase=$uploadImageIdStocksUseCase;
+        $this->setByStorageImageStockUseCase=$setByStorageImageStockUseCase;
+        $this->updateProductPriceWithDiscount=$updateProductPriceWithDiscount;
     }
 
     public function behaviors(): array
@@ -113,9 +126,14 @@ class AdminController extends Controller
 
     public function actionIndex():array {
         return [
-//            'stocks' => $this->allStocksUseCase->execute(),
+
             'products' => $this->allProductsUseCase->execute(),
 //            'populars' => $this->allPopularUseCase->execute(),
+        ];
+    }
+    public function actionGetStocks():array {
+        return [
+            'stocks' => $this->allStocksUseCase->execute(),
         ];
     }
 
@@ -225,7 +243,7 @@ class AdminController extends Controller
 
         if ($model->load(Yii::$app->request->post(), '') && $model->validate() || Yii::$app->request->isPost) {
             extract(Yii::$app->request->post());
-            $image = $this->setByStorageImageUseCase->execute();
+            $image = $this->setByStorageImageProductUseCase->execute();
             $this->createProductUseCase->execute($title, $description, $price,$image,$category_id);
 
             return [
@@ -246,7 +264,7 @@ class AdminController extends Controller
         if ($model->load(Yii::$app->request->post(), '') && $model->validate() || Yii::$app->request->isPost) {
             extract(Yii::$app->request->post());
             $this->updateProductUseCase->execute($product_id, $title, $description, $price);
-            $path = $this->setByStorageImageUseCase->execute();
+            $path = $this->setByStorageImageProductUseCase->execute();
             $id = Yii::$app->request->post('product_id');
             $id = $id ? trim($id) : '';
             $status = $this->uploadImageIdProductUseCase->execute($path, $id);
@@ -296,9 +314,8 @@ class AdminController extends Controller
 
         if ($model->load(Yii::$app->request->post(), '') && $model->validate() || Yii::$app->request->isPost) {
             extract(Yii::$app->request->post());
-//            $image = $this->setByStorageImageUseCase->execute();
-            $this->createStocksUseCase->execute($image, $discount, $product_id);
-
+            $image = $this->setByStorageImageStockUseCase->execute();
+            $this->createStocksUseCase->execute($image, $product_id);
             return [
                 'error' => false,
                 'send' => true,
@@ -309,6 +326,26 @@ class AdminController extends Controller
             'send' => false,
         ];
     }
+    public function actionUpdatePrice(): array
+    {
+        $model = new StockForm();
+
+        if ($model->load(Yii::$app->request->post(), '') && $model->validate() || Yii::$app->request->isPost) {
+            extract(Yii::$app->request->post());
+            $data = $this->updateProductPriceWithDiscount->execute($product_id, $discount);
+            return [
+                'error' => false,
+                'send' => true,
+                'data'=> $data
+            ];
+        }
+        return [
+            'error' => true,
+            'send' => false,
+        ];
+    }
+
+
 
 
     public function actionUpdateStock(): array
@@ -317,11 +354,12 @@ class AdminController extends Controller
         $status = false;
         if ($model->load(Yii::$app->request->post(), '') && $model->validate() || Yii::$app->request->isPost) {
             extract(Yii::$app->request->post());
-            $this->updateStocksUseCase->execute($id, $title, $description, $price);
-            $path = $this->setByStorageImageUseCase->execute();
-            $id = Yii::$app->request->post('id');
-            $id = $id ? trim($id) : '';
-            $status = $this->uploadImageIdStocksUseCase->execute($path, $id);
+            $data = $this->updateStocksUseCase->execute($stock_id, $discount);
+//            $path = $this->setByStorageImageUseCase->execute();
+//            $id = Yii::$app->request->post('stock_id');
+//            $id = $id ? trim($id) : '';
+//            $status = $this->uploadImageIdStocksUseCase->execute($path, $id);
+            $status = true;
         }
         if ($status) {
             return [
@@ -332,6 +370,7 @@ class AdminController extends Controller
         return [
             'error' => true,
             'send' => false,
+            'data' =>$data
         ];
 
     }

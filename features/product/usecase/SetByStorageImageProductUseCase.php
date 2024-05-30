@@ -4,7 +4,7 @@ namespace app\features\product\usecase;
 
 use yii\web\UploadedFile;
 
-class SetByStorageImageUseCase
+class SetByStorageImageProductUseCase
 {
     public function execute(): string
     {
@@ -13,8 +13,8 @@ class SetByStorageImageUseCase
         $image = '';
 
         foreach ($uploads as $file) {
-            $file->saveAs('images/' . $file->name);
-            $image = 'images/'. $file->name;
+            $file->saveAs('images/products/' . $file->name);
+            $image =  $file->name;
         }
 
         return $image;

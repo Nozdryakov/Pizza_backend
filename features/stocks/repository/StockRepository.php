@@ -20,36 +20,31 @@ class StockRepository implements DeleteStocksInterface
             ->asArray()
             ->all();
     }
-    public function itemCreate(string $image, string $discount, $product_id): bool
+    public function itemCreate(string $image, $product_id): bool
     {
         $stocks = new Stocks();
         $stocks->image = $image;
-        $stocks->discount = $discount;
         $stocks->product_id = $product_id;
 
         if ($stocks->save()) {
-            // Данные успешно сохранены
             return true;
         } else {
-            // Если данные не сохранены, можно вывести ошибки в журнал или лог
             Yii::error('Failed to save stocks: ' . print_r($stocks->errors, true));
             return false;
         }
     }
 
-    public function itemUpdate($id,string $title, string $description,string $price) : bool
+    public function itemUpdate($stock_id,string $discount) : bool
     {
-        $stocks = Stocks::findOne($id);
+        $stocks = Stocks::findOne($stock_id);
         if (empty($stocks)) return false;
 
-        $stocks->title = $title;
-        $stocks->description = $description;
-        $stocks->price = $price;
+        $stocks->discount = $discount;
         return $stocks->save();
     }
-    public function uploadImageId(string $image, string $id) : bool
+    public function uploadImageId(string $image, string $stock_id) : bool
     {
-        $stocks = Stocks::findOne($id);
+        $stocks = Stocks::findOne($stock_id);
         if (empty($stocks)) return false;
 
         $stocks->image = $image;

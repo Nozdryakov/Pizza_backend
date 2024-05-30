@@ -33,11 +33,10 @@ class Product extends \yii\db\ActiveRecord
     {
         return [
             [['image'], 'string'],
-            [['title', 'description', 'price'], 'required'],
+            [['title', 'price'], 'required'],
             [['price'], 'number'],
             [['category_id'], 'integer'],
             [['title'], 'string', 'max' => 90],
-            [['description'], 'string', 'max' => 90],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Categories::class, 'targetAttribute' => ['category_id' => 'category_id']],
         ];
     }

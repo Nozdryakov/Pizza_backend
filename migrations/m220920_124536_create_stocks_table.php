@@ -16,7 +16,7 @@ class m220920_124536_create_stocks_table extends Migration
             'stock_id' => $this->primaryKey(),
             'image' => $this->string(120)->Null(),
             'discount' => $this->decimal(5, 2)->notNull()->defaultValue(0.00),
-            'product_id' => $this->integer(),
+            'product_id' => $this->integer()->notNull()->unique(),
 
         ]);
     }

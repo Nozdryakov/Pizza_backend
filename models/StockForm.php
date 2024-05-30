@@ -6,15 +6,14 @@ use yii\base\Model;
 
 class StockForm extends Model
 {
-    public $title;
-    public $description;
-    public $price;
+    public $product_id;
     public $discount;
+    public $image;
 
     public function rules()
     {
         return [
-            [['title','description', 'price', 'discount'], 'required'],
+            [['product_id', 'image', 'discount'], 'required'],
         ];
     }
 
