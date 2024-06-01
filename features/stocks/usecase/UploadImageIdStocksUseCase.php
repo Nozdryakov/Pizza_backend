@@ -15,7 +15,7 @@ class UploadImageIdStocksUseCase
         $this->createRepository = $createRepository;
     }
 
-    public function execute($image, $stock_id): bool
+    public function execute($image, $stock_id)
     {
         return $this->createRepository->uploadImageId($image, $stock_id);
     }

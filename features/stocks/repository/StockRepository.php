@@ -42,23 +42,18 @@ class StockRepository implements DeleteStocksInterface
         $stocks->discount = $discount;
         return $stocks->save();
     }
-    public function uploadImageId(string $image, string $stock_id) : bool
+    public function uploadImageId(string $image, string $stock_id): bool
     {
-        $stocks = Stocks::findOne($stock_id);
+        $stocks = Stocks::findOne(['stock_id' => $stock_id]);
         if (empty($stocks)) return false;
 
         $stocks->image = $image;
         return $stocks->save();
     }
 
-    /**
-     * @throws \Throwable
-     * @throws StaleObjectException
-     */
     public function itemDelete($id)
     {
         $stocks = Stocks::findOne($id);
-
         if (empty($stocks)) return false;
 
         return $stocks->delete();

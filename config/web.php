@@ -167,7 +167,7 @@ $config = [
                     'prefix' => '',
                     'extraPatterns' => [
                         'POST  insert-product'=> 'insert-product',
-                        'POST update-price' =>'update-price'
+                        'POST update-visible' =>'update-visible'
                     ],
                 ],
                 [

@@ -86,4 +86,13 @@ class ProductRepository implements ProductInterface, DeleteProductInterface
         return ['success' => true];
     }
 
+    public function updateProductVisible($product_id, $visible): bool
+    {
+        $product = Product::findOne(['product_id' => $product_id]);
+        if (empty($product)) return false;
+        $product->visible = $visible;
+        return $product->save();
+    }
+
+
 }
