@@ -386,13 +386,14 @@ class AdminController extends Controller
         $status = false;
         if ($model->load(Yii::$app->request->post(), '') && $model->validate() || Yii::$app->request->isPost) {
             extract(Yii::$app->request->post());
-            $this->updateProductPriceWithDiscount->execute($product_id, $discount);
 
             if (!empty($image)) {
                 $status = true;
                 $this->updateStocksUseCase->execute($stock_id, $discount, $image);
+                $this->updateProductPriceWithDiscount->execute($product_id, $discount);
             } else {
                 $path = $this->setByStorageImageStockUseCase->execute();
+                $this->updateProductPriceWithDiscount->execute($product_id, $discount);
 
                 if ($path === false) {
                     return [
@@ -405,6 +406,7 @@ class AdminController extends Controller
                     $id = Yii::$app->request->post('stock_id');
                     $id = $id ? trim($id) : '';
                     $status = $this->uploadImageIdStocksUseCase->execute($path, $id);
+                    $this->updateProductPriceWithDiscount->execute($product_id, $discount);
                 }
             }
         }
