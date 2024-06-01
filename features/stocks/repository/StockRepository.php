@@ -22,6 +22,11 @@ class StockRepository implements DeleteStocksInterface
     }
     public function itemCreate(string $image, $product_id): bool
     {
+        $existingStock = Stocks::findOne(['product_id' => $product_id]);
+
+        if ($existingStock !== null) {
+            return false;
+        }
         $stocks = new Stocks();
         $stocks->image = $image;
         $stocks->product_id = $product_id;
@@ -29,10 +34,11 @@ class StockRepository implements DeleteStocksInterface
         if ($stocks->save()) {
             return true;
         } else {
-            Yii::error('Failed to save stocks: ' . print_r($stocks->errors, true));
+
             return false;
         }
     }
+
 
     public function itemUpdate($stock_id,string $discount) : bool
     {

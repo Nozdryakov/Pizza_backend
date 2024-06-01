@@ -6,17 +6,24 @@ use yii\web\UploadedFile;
 
 class SetByStorageImageProductUseCase
 {
-    public function execute(): string
+    public function execute(): ?string
     {
         $uploads = UploadedFile::getInstancesByName("imageFile");
 
-        $image = '';
-
         foreach ($uploads as $file) {
-            $file->saveAs('images/products/' . $file->name);
-            $image =  $file->name;
+            if ($file instanceof UploadedFile) {
+                if (in_array($file->extension, ['jpg', 'png'])) {
+                    $file->saveAs('images/products/' . $file->name);
+                    return $file->name;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
         }
 
-        return $image;
+        return false;
     }
 }
+

@@ -8,12 +8,15 @@ class ProductForm extends Model
 {
     public $title;
     public $price;
+    public $image;
 
     public function rules()
     {
         return [
             [['title', 'price'], 'required'],
+            [['image'], 'file', 'extensions' => 'jpg, png', 'wrongExtension' => 'Только форматы jpg и png'],
+            [['price'], 'number'],
+            [['title'], 'string', 'max' => 90],
         ];
     }
-
 }

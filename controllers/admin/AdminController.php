@@ -249,17 +249,18 @@ class AdminController extends Controller
         if ($model->load(Yii::$app->request->post(), '') && $model->validate() || Yii::$app->request->isPost) {
             extract(Yii::$app->request->post());
             $image = $this->setByStorageImageProductUseCase->execute();
-            $this->createProductUseCase->execute($title, $description, $price,$image,$category_id);
-
-            return [
-                'error' => false,
-                'send' => true,
-            ];
+            $status = $this->createProductUseCase->execute($title, $description, $price, $image, $category_id);
+            if ($status && $image !== '') {
+                return [
+                    'error' => false,
+                    'send' => true,
+                ];
+            }
         }
-        return [
-            'error' => true,
-            'send' => false,
-        ];
+            return [
+                'error' => true,
+                'send' => false,
+            ];
     }
 
     public function actionUpdateProduct(): array
@@ -333,17 +334,24 @@ class AdminController extends Controller
         if ($model->load(Yii::$app->request->post(), '') && $model->validate() || Yii::$app->request->isPost) {
             extract(Yii::$app->request->post());
             $image = $this->setByStorageImageStockUseCase->execute();
-            $this->createStocksUseCase->execute($image, $product_id);
-            return [
-                'error' => false,
-                'send' => true,
-            ];
+            $status = $this->createStocksUseCase->execute($image, $product_id);
+            if ($status && $image !== '') {
+                return [
+                    'error' => false,
+                    'send' => true,
+                    'image' => $image,
+                    'status'=> $status
+                ];
+            }
         }
         return [
             'error' => true,
             'send' => false,
+            'image' => $image,
+            'status'=> $status
         ];
     }
+
     public function actionUpdateVisible(): array
     {
         $model = new StockForm();
@@ -371,14 +379,6 @@ class AdminController extends Controller
         $status = false;
         if ($model->load(Yii::$app->request->post(), '') && $model->validate() || Yii::$app->request->isPost) {
             extract(Yii::$app->request->post());
-//            $status1 = $this->updateProductPriceWithDiscount->execute($product_id, $discount);
-//             $status2 = $this->updateStocksUseCase->execute($stock_id, $discount);
-//            $path = $this->setByStorageImageStockUseCase->execute();
-//            $id = Yii::$app->request->post('stock_id');
-//            $id = $id ? trim($id) : '';
-//            $status3 = $this->uploadImageIdStocksUseCase->execute($path, $stock_id);
-//            $status =  true;
-
             $this->updateProductPriceWithDiscount->execute($product_id, $discount);
             $this->updateStocksUseCase->execute($stock_id, $discount);
             $path = $this->setByStorageImageStockUseCase->execute();
@@ -396,10 +396,6 @@ class AdminController extends Controller
             return [
                 'error' => false,
                 'send' => true,
-//                'stock_id'=> $stock_id,
-//                'status1' => $status1,
-//                'status2' => $status2,
-//                'status3' => $status3
                 'status1' => $status,
             ];
         }
@@ -408,10 +404,6 @@ class AdminController extends Controller
             'send' => false,
             'path' => $path,
             'status1' => $status,
-//            'stock_id'=> $stock_id,
-//            'status1' => $status1,
-//            'status2' => $status2,
-//            'status3' => $status3
         ];
 
     }

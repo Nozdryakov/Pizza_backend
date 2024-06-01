@@ -28,7 +28,8 @@ class Stocks extends ActiveRecord
     public function rules()
     {
         return [
-            [['image','discount'], 'string'],
+            [['image', 'product_id'], 'required'],
+            [['image'], 'string'],
             [['product_id'], 'integer'],
         ];
     }

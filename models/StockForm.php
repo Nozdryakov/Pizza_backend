@@ -13,7 +13,8 @@ class StockForm extends Model
     public function rules()
     {
         return [
-            [['product_id', 'image', 'discount'], 'required'],
+            [['image', 'product_id'], 'required'],
+            [['image'], 'file', 'extensions' => 'jpg, png', 'wrongExtension' => 'Только форматы jpg и png'],
         ];
     }
 
