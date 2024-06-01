@@ -16,7 +16,7 @@ class CreateStocksUseCase
         $this->createRepository = $createRepository;
     }
 
-    public function execute($image, $product_id): bool
+    public function execute($image, $product_id)
     {
         return $this->createRepository->itemCreate($image, $product_id);
     }

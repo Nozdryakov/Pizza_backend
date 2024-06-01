@@ -15,9 +15,9 @@ class UpdateStocksUseCase
         $this->updateRepository = $updateRepository;
     }
 
-    public function execute($id, $discount)
+    public function execute($id, $discount, $image)
     {
-        return $this->updateRepository->itemUpdate($id, $discount);
+        return $this->updateRepository->itemUpdate($id, $discount, $image);
     }
 
 }

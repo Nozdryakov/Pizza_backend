@@ -20,41 +20,56 @@ class StockRepository implements DeleteStocksInterface
             ->asArray()
             ->all();
     }
-    public function itemCreate(string $image, $product_id): bool
+    public function itemCreate(string $image, $product_id)
     {
         $existingStock = Stocks::findOne(['product_id' => $product_id]);
 
         if ($existingStock !== null) {
-            return false;
+//            return false;
+            return ['id' => 'false'];
         }
         $stocks = new Stocks();
         $stocks->image = $image;
         $stocks->product_id = $product_id;
 
         if ($stocks->save()) {
-            return true;
+//            return true;
+            return ['save' => 'true'];
         } else {
 
-            return false;
+//            return false;
+            return ['id' => 'false'];
         }
     }
 
 
-    public function itemUpdate($stock_id,string $discount) : bool
+    public function itemUpdate($stock_id, string $discount, string $image)
     {
         $stocks = Stocks::findOne($stock_id);
         if (empty($stocks)) return false;
 
+        $stocks->image = $image;
         $stocks->discount = $discount;
-        return $stocks->save();
+
+        if ($stocks->save()) {
+            return true;
+        } else {
+            $errors = $stocks->getErrors();
+            return $errors;
+        }
     }
-    public function uploadImageId(string $image, string $stock_id): bool
+    public function uploadImageId(string $image, string $stock_id)
     {
         $stocks = Stocks::findOne(['stock_id' => $stock_id]);
         if (empty($stocks)) return false;
 
         $stocks->image = $image;
-        return $stocks->save();
+        if ($stocks->save()) {
+            return true;
+        } else {
+            $errors = $stocks->getErrors();
+            return $errors;
+        }
     }
 
     public function itemDelete($id)

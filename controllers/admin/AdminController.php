@@ -2,6 +2,7 @@
 
 namespace app\controllers\admin;
 
+use app\models\Product;
 use Yii;
 use yii\db\StaleObjectException;
 use yii\filters\auth\CompositeAuth;
@@ -265,36 +266,42 @@ class AdminController extends Controller
 
     public function actionUpdateProduct(): array
     {
-        $model = new ProductForm();
+        $model = new Product();
         $status = false;
-
         if ($model->load(Yii::$app->request->post(), '') && $model->validate() || Yii::$app->request->isPost) {
             extract(Yii::$app->request->post());
 
-            $this->updateProductUseCase->execute($product_id, $title, $description, $price);
-
-            $path = $this->setByStorageImageProductUseCase->execute();
-
-            if (!empty($path)) {
-                $id = Yii::$app->request->post('product_id');
-                $id = $id ? trim($id) : '';
-
-                $status = $this->uploadImageIdProductUseCase->execute($path, $id);
-            } else {
+            if (!empty($image)) {
                 $status = true;
+                $this->updateProductUseCase->execute($product_id, $title, $description, $price, $image);
+            } else {
+                $path = $this->setByStorageImageProductUseCase->execute();
+
+                if ($path === false) {
+                    return [
+                        'error' => true,
+                        'send' => false,
+                        'status' => false,
+                        'message' => 'Invalid image file.'
+                    ];
+                } else {
+                    $id = Yii::$app->request->post('product_id');
+                    $id = $id ? trim($id) : '';
+                    $status = $this->uploadImageIdProductUseCase->execute($path, $id);
+                }
             }
         }
-
         if ($status) {
             return [
                 'error' => false,
                 'send' => true,
+                'status' => $status,
             ];
         }
-
         return [
             'error' => true,
             'send' => false,
+            'status' => $status,
         ];
     }
 
@@ -335,7 +342,7 @@ class AdminController extends Controller
             extract(Yii::$app->request->post());
             $image = $this->setByStorageImageStockUseCase->execute();
             $status = $this->createStocksUseCase->execute($image, $product_id);
-            if ($status && $image !== '') {
+            if ($status && $image) {
                 return [
                     'error' => false,
                     'send' => true,
@@ -380,32 +387,41 @@ class AdminController extends Controller
         if ($model->load(Yii::$app->request->post(), '') && $model->validate() || Yii::$app->request->isPost) {
             extract(Yii::$app->request->post());
             $this->updateProductPriceWithDiscount->execute($product_id, $discount);
-            $this->updateStocksUseCase->execute($stock_id, $discount);
-            $path = $this->setByStorageImageStockUseCase->execute();
 
-            if (!empty($path)) {
-                $id = Yii::$app->request->post('stock_id');
-                $id = $id ? trim($id) : '';
-
-                $status = $this->uploadImageIdStocksUseCase->execute($path, $id);
-            } else {
+            if (!empty($image)) {
                 $status = true;
+                $this->updateStocksUseCase->execute($stock_id, $discount, $image);
+            } else {
+                $path = $this->setByStorageImageStockUseCase->execute();
+
+                if ($path === false) {
+                    return [
+                        'error' => true,
+                        'send' => false,
+                        'status' => false,
+                        'message' => 'Invalid image file.'
+                    ];
+                } else {
+                    $id = Yii::$app->request->post('stock_id');
+                    $id = $id ? trim($id) : '';
+                    $status = $this->uploadImageIdStocksUseCase->execute($path, $id);
+                }
             }
         }
         if ($status) {
             return [
                 'error' => false,
                 'send' => true,
-                'status1' => $status,
+                'status' => $status,
             ];
         }
         return [
             'error' => true,
             'send' => false,
-            'path' => $path,
-            'status1' => $status,
+            'status' => $status,
         ];
-
     }
+
+
 
 }

@@ -14,7 +14,7 @@ class ProductForm extends Model
     {
         return [
             [['title', 'price'], 'required'],
-            [['image'], 'file', 'extensions' => 'jpg, png', 'wrongExtension' => 'Только форматы jpg и png'],
+            [['image'], 'file', 'extensions' => 'jpg, png, jpeg', 'wrongExtension' => 'Только форматы jpg и png'],
             [['price'], 'number'],
             [['title'], 'string', 'max' => 90],
         ];

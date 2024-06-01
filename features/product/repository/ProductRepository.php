@@ -26,7 +26,7 @@ class ProductRepository implements ProductInterface, DeleteProductInterface
         $product->category_id = $category_id;
         return $product->save();
     }
-    public function itemUpdate($product_id,string $title, string $description,string $price) : bool
+    public function itemUpdate($product_id,string $title, string $description,string $price, string $image) : bool
     {
         $product = Product::findOne($product_id);
 
@@ -35,6 +35,7 @@ class ProductRepository implements ProductInterface, DeleteProductInterface
         $product->title = $title;
         $product->description = $description;
         $product->price = $price;
+        $product->image = $image;
         return $product->save();
     }
     public function uploadImageId(string $image, string $id) : bool
