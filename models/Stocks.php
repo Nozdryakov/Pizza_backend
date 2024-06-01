@@ -10,7 +10,7 @@ use yii\db\ActiveRecord;
  * @property int $id
  * @property resource|null $image
  * @property int|null $product_id
- * @property int|null $discount
+ * @property string|null $discount
  */
 class Stocks extends ActiveRecord
 {
@@ -28,8 +28,8 @@ class Stocks extends ActiveRecord
     public function rules()
     {
         return [
-            [['image'], 'string'],
-            [['product_id', 'discount'], 'integer'],
+            [['image','discount'], 'string'],
+            [['product_id'], 'integer'],
         ];
     }
 

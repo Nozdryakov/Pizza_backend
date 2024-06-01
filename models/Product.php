@@ -12,6 +12,7 @@ use Yii;
  * @property string $title
  * @property string $description
  * @property float $price
+ * @property float $visible
  * @property int|null $category_id
  *
  * @property Categories $category
