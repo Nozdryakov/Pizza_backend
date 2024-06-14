@@ -251,7 +251,7 @@ class AdminController extends Controller
             extract(Yii::$app->request->post());
             $image = $this->setByStorageImageProductUseCase->execute();
             $status = $this->createProductUseCase->execute($title, $description, $price, $image, $category_id);
-            if ($status && $image !== '') {
+            if ($status && $image) {
                 return [
                     'error' => false,
                     'send' => true,
