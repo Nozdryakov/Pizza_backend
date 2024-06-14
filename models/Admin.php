@@ -4,25 +4,25 @@ namespace app\models;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
-class User extends ActiveRecord implements IdentityInterface
+class Admin extends ActiveRecord implements IdentityInterface
 {
     public static function tableName()
     {
-        return 'users';
+        return 'admins';
     }
 
     public function fields()
     {
         return [
-            'user_id',
+            'admin_id',
             'username',
         ];
     }
     public function attributeLabels()
     {
         return [
-            'user_id' => 'user_id',
-            'email' => 'email',
+            'admin_id' => 'admin_id',
+            'username' => 'username',
             'password' => 'password'
         ];
     }
@@ -30,12 +30,12 @@ class User extends ActiveRecord implements IdentityInterface
     /**
      * Finds an identity by the given ID.
      *
-     * @param string|int $id the ID to be looked for
+     * @param string|int $admin_id the ID to be looked for
      * @return IdentityInterface|null the identity object that matches the given ID.
      */
-    public static function findIdentity($id)
+    public static function findIdentity($admin_id)
     {
-        return static::findOne($id);
+        return static::findOne($admin_id);
     }
 
     /**
@@ -54,7 +54,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function getId()
     {
-        return $this->id;
+        return $this->admin_id;
     }
 
     /**
@@ -73,9 +73,9 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return $this->getAuthKey() === $authKey;
     }
-    static public function findByUsername($email)
+    static public function findByUsername($username)
     {
-        return User::findOne(['email' => $email]);
+        return Admin::findOne(['username' => $username]);
     }
 
     public function validatePassword($password) {

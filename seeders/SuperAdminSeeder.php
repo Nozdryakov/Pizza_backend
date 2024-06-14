@@ -13,10 +13,10 @@ class SuperAdminSeeder {
     ];
 
     public function up() {
-        Yii::$app->db->createCommand()->insert('users', $this->fieldsSuperAdmin)->execute();
+        Yii::$app->db->createCommand()->insert('admins', $this->fieldsSuperAdmin)->execute();
     }
 
     public function down() {
-        Yii::$app->db->createCommand()->delete('users')->execute();
+        Yii::$app->db->createCommand()->delete('admins')->execute();
     }
 }

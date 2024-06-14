@@ -34,7 +34,7 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\Admin',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
@@ -107,7 +107,8 @@ $config = [
                     'extraPatterns' => [
                         'POST handler' => 'handler-order',
                         'GET  index'=> 'index', // PATH url => action controller,
-                        'GET  get-stocks' => 'get-stocks'
+                        'GET  get-stocks' => 'get-stocks',
+                        'POST send-order' => 'send-order'
                     ],
                 ],
                 [
@@ -232,6 +233,15 @@ $config = [
                     'extraPatterns' => [
                         'POST login' => 'login',
                         'GET  index'=> 'index', // PATH url => action controller,
+                    ],
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'AuthUser/auth-user', // своя придумка => 'namespace/controller'
+                    'prefix' => '',
+                    'extraPatterns' => [
+                        'POST login' => 'login',
+                        'POST register' => 'register',
                     ],
                 ],
             ]

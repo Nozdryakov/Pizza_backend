@@ -1,7 +1,7 @@
 <?php
 namespace app\controllers\AuthAdmin;
+use app\models\Admin;
 use app\models\Token;
-use app\models\User;
 use Yii;
 use yii\rest\Controller;
 
@@ -19,7 +19,7 @@ class AuthController extends Controller
         $username = $request->getBodyParam('username');
         $password = $request->getBodyParam('password');
 
-        $user = User::findByUsername($username);
+        $user = Admin::findByUsername($username);
         if (!$user) {
             return ['error' => 'Нет такого пользователя!'];
         }

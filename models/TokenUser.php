@@ -12,11 +12,11 @@ use yii\db\ActiveRecord;
  * @property mixed|null $username
  * @property mixed|null $password
  */
-class Token extends ActiveRecord
+class TokenUser extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'admins';
+        return 'users';
     }
 
     /**

@@ -11,10 +11,11 @@ class SeederController extends \yii\console\Controller
     private array $listClassSeeder = [
         'CategoriesSeeder',
         'ProductSeeder',
-        'UsersSeeder',
+        'AdminsSeeder',
         'StocksSeeder',
         'PopularSeeder',
         'SuperAdminSeeder',
+        'UsersSeeder'
     ];
 
     public function actionCreateSeeder($name)

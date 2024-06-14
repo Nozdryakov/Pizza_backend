@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m240418_234708_create_relation_ships_file
+ * Class m240618_234708_create_relation_ships_file
  */
-class m240418_234708_create_relation_ships_file extends Migration
+class m240618_234708_create_relation_ships_file extends Migration
 {
     /**
      * {@inheritdoc}
@@ -38,7 +38,22 @@ class m240418_234708_create_relation_ships_file extends Migration
             'product_id',
             'CASCADE',
         );
-
+        $this->addForeignKey(
+            'fk-orders-user',
+            'orders',
+            'user_id',
+            'users',
+            'user_id',
+            'CASCADE',
+        );
+        $this->addForeignKey(
+            'fk-address-user',
+            'address',
+            'user_id',
+            'users',
+            'user_id',
+            'CASCADE',
+        );
     }
 
     /**

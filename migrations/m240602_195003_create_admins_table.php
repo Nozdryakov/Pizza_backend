@@ -3,22 +3,22 @@
 use yii\db\Migration;
 
 /**
- * Handles the creation of table `{{%users}}`.
+ * Handles the creation of table `{{%admins}}`.
  */
-class m220920_124413_create_users_table extends Migration
+class m240602_195003_create_admins_table extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('{{%users}}', [
-            'user_id' => $this->primaryKey(),
-            'email'=>$this->string(),
-            'phone'=>$this->string(),
+        $this->createTable('{{%admins}}', [
+            'admin_id' => $this->primaryKey(),
+            'username'=>$this->string(),
             'password'=>$this->string(),
             'authKey'=>$this->string(),
             'accessToken'=>$this->string(),
+            'role'=>$this->tinyInteger(),
         ]);
     }
 
@@ -27,7 +27,6 @@ class m220920_124413_create_users_table extends Migration
      */
     public function safeDown()
     {
-
-        $this->dropTable('{{%users}}');
+        $this->dropTable('{{%admins}}');
     }
 }

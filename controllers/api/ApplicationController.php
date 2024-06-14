@@ -9,6 +9,7 @@ use app\features\stocks\usecase\GetAllStocksUseCase;
 use app\features\popular\usecase\GetAllPopularUseCase;
 use app\features\mail\usecase\SendMailUseCase;
 use app\models\HandlerOrder;
+use yii\web\Response;
 
 class ApplicationController extends Controller
 {
@@ -35,13 +36,34 @@ class ApplicationController extends Controller
         return [
 
             'products' => $this->allProductsUseCase->execute(),
-//            'populars' => $this->allPopularUseCase->execute(),
+            'populars' => $this->allPopularUseCase->execute(),
         ];
     }
     public function actionGetStocks():array{
         return [
             'stocks' => $this->allStocksUseCase->execute()
         ];
+
+    }
+    public function actionSendOrder():array{
+        Yii::$app->response->format = Response::FORMAT_JSON;
+
+        $data = Yii::$app->request->post('data');
+
+        if($data){
+            return [
+                'error' => false,
+                'send' => true,
+                'data' => $data
+            ];
+        }
+        else
+        {
+            return [
+                'error' => true,
+                'send' => false,
+            ];
+        }
     }
     public function actionHandlerOrder(): array
     {
