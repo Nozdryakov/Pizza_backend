@@ -10,6 +10,7 @@ class SuperAdminSeeder {
         'password' => 'admin',
         'authKey'  => 'auth-admin',
         'accessToken' => 'token-admin',
+        'role' => 1
     ];
 
     public function up() {

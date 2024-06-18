@@ -13,8 +13,27 @@ use yii\db\StaleObjectException;
 
 class ProductRepository implements ProductInterface, DeleteProductInterface
 {
-    public function getListAllProducts(): array {
+    public function getListAllProducts(): array
+    {
         return  Categories::find()->joinWith('products')->asArray()->all();
+    }
+    public function getListPopularsProducts(): array
+    {
+        return (new \yii\db\Query())
+            ->select([
+                'p.product_id as product_id',
+                'p.title',
+                'p.price',
+                'p.num_of_orders',
+                'p.image as product_image',
+                'pp.image as popular_image'
+            ])
+            ->from(['p' => 'product'])
+            ->innerJoin(['pp' => 'popular'], 'pp.product_id = p.product_id')
+            ->where(['and', ['not', ['pp.image' => null]], ['<>', 'pp.image', '']])
+            ->orderBy(['p.num_of_orders' => SORT_DESC])
+            ->limit(6)
+            ->all();
     }
     public function itemCreate(string $title, string $description,string $price, string $image, int $category_id) : bool
     {

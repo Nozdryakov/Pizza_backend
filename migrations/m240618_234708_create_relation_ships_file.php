@@ -39,14 +39,6 @@ class m240618_234708_create_relation_ships_file extends Migration
             'CASCADE',
         );
         $this->addForeignKey(
-            'fk-orders-user',
-            'orders',
-            'user_id',
-            'users',
-            'user_id',
-            'CASCADE',
-        );
-        $this->addForeignKey(
             'fk-address-user',
             'address',
             'user_id',
@@ -54,6 +46,14 @@ class m240618_234708_create_relation_ships_file extends Migration
             'user_id',
             'CASCADE',
         );
+//        $this->addForeignKey(
+//            'fk-order-address',
+//            'orders',
+//            'address_id',
+//            'address',
+//            'address_id',
+//            'CASCADE',
+//        );
     }
 
     /**

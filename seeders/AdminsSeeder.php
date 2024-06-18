@@ -17,11 +17,13 @@ class AdminsSeeder {
             $password = Person::firstNameFemale();
             $authKey = 'auth-' . $username;
             $accessToken = 'token-' . $username;
+            $role = 2;
             $fieldsFaker = [
                 'username' => $username,
                 'password' => $password,
                 'authKey'  => $authKey,
                 'accessToken' => $accessToken,
+                'role' => $role,
             ];
             Yii::$app->db->createCommand()->insert('admins', $fieldsFaker)->execute();
         }

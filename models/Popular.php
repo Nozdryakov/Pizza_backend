@@ -16,5 +16,9 @@ class Popular extends ActiveRecord
     {
         return 'popular';
     }
+    public function getProduct()
+    {
+        return $this->hasOne(Product::class, ['product_id' => 'product_id']);
+    }
 
 }

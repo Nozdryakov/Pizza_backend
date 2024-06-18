@@ -11,6 +11,7 @@ use yii\db\ActiveRecord;
  * @property mixed|null $token
  * @property mixed|null $username
  * @property mixed|null $password
+ * @property integer $role
  */
 class Token extends ActiveRecord
 {

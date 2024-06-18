@@ -20,6 +20,7 @@ class m220919_163445_create_product_table extends Migration
             'price' => $this->decimal(7,2)->notNull(),
             'visible' => $this->tinyInteger(1)->defaultValue(0)->notNull(),
             'category_id' => $this->integer()->notNull(),
+            'num_of_orders' => $this->integer(),
         ]);
 
     }

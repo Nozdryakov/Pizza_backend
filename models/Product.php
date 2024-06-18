@@ -70,4 +70,9 @@ class Product extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Stocks::class, ['product_id' => 'product_id']);
     }
+    public function getPopular()
+    {
+        return $this->hasOne(Popular::class, ['product_id' => 'product_id']);
+    }
+
 }

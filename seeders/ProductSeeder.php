@@ -21,6 +21,7 @@ class ProductSeeder {
             'price' => 25,
             'visible' => 1,
             'category_id' => 1,
+            'num_of_orders' => 30,
         ],
         [
             'image' => 'product-3.jpg',
@@ -45,6 +46,7 @@ class ProductSeeder {
             'price' => 21,
             'visible' => 1,
             'category_id' => 1,
+            'num_of_orders' => 55,
         ],
         [
             'image' => 'product-6.jpg',
@@ -53,6 +55,7 @@ class ProductSeeder {
             'price' => 24,
             'visible' => 1,
             'category_id' => 1,
+            'num_of_orders' => 16
         ],
         [
             'image' => 'product-7.jpg',
@@ -102,6 +105,7 @@ class ProductSeeder {
             'price' => 90,
             'visible' => 1,
             'category_id' => 2,
+            'num_of_orders' => 77,
         ],
         [
             'image' => 'zakuska-5.jpg',

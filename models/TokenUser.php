@@ -7,9 +7,10 @@ use yii\db\ActiveRecord;
 
 /**
  * @property mixed|string|null $authKey
+ * @property string|null $userName
  * @property mixed|null $accessToken
  * @property mixed|null $token
- * @property mixed|null $username
+ * @property mixed|null $email
  * @property mixed|null $password
  */
 class TokenUser extends ActiveRecord
@@ -22,10 +23,10 @@ class TokenUser extends ActiveRecord
     /**
      * @throws Exception
      */
-    public static function generateToken($username, $password, $accessToken)
+    public static function generateToken($email, $password, $accessToken)
     {
         $token = new self();
-        $token->username = $username;
+        $token->email = $email;
         $token->password = $password;
         $token->authKey = Yii::$app->security->generateRandomString();
         $token->accessToken = $accessToken;

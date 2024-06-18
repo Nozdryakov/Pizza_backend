@@ -7,28 +7,20 @@ use Yii;
 class PopularSeeder {
     private array $fields = [
         [
-            'image' => '/path',
-            'product_id' => 6,
-        ],
-        [
-            'image' => '/path',
-            'product_id' => 10,
-        ],
-        [
-            'image' => '/path',
-            'product_id' => 11,
-        ],
-        [
-            'image' => '/path',
-            'product_id' => 1,
-        ],
-        [
-            'image' => '/path',
+            'image' => '05.jpg',
             'product_id' => 2,
         ],
         [
-            'image' => '/path',
-            'product_id' => 3,
+            'image' => '03.jpg',
+            'product_id' => 5,
+        ],
+        [
+            'image' => '02.jpg',
+            'product_id' => 12,
+        ],
+        [
+            'image' => '01.jpg',
+            'product_id' => 6,
         ],
     ];
 

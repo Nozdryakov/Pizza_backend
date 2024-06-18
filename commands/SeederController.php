@@ -15,7 +15,8 @@ class SeederController extends \yii\console\Controller
         'StocksSeeder',
         'PopularSeeder',
         'SuperAdminSeeder',
-        'UsersSeeder'
+        'UsersSeeder',
+        'AreasSeeder'
     ];
 
     public function actionCreateSeeder($name)
