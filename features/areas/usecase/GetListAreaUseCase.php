@@ -2,19 +2,20 @@
 
 namespace app\features\areas\usecase;
 
-use app\features\areas\repository\AreaRepository;
+use app\features\areas\implementationRepository\AreaRepository;
+use app\features\areas\interfaceRepository\IAreaRepository;
 
 class GetListAreaUseCase
 {
+
     public function __construct(
-        AreaRepository $areaRepository
+        AreaRepository $repository
     )
     {
-        $this->areaRepository = $areaRepository;
+        $this->repository = $repository;
     }
 
-    public function execute(): array
-    {
-        return $this->areaRepository->GetListArea();
+    public function execute(): array {
+        return $this->repository->GetListArea();
     }
 }

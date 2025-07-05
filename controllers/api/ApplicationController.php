@@ -2,6 +2,8 @@
 
 namespace app\controllers\api;
 
+use app\features\areas\implementationRepository\AreaRepository;
+use app\features\areas\interfaceRepository\IAreaRepository;
 use app\features\areas\usecase\GetListAreaUseCase;
 use app\features\product\usecase\GetListPopularsProductsUseCase;
 use app\models\Address;
@@ -34,6 +36,7 @@ class ApplicationController extends Controller
         GetListPopularsProductsUseCase $getListPopularsProductsUseCase,
         GetListAreaUseCase $getListAreaUseCase
 
+
     )
     {
        parent::__construct($id, $module);
@@ -43,6 +46,7 @@ class ApplicationController extends Controller
        $this->mailUseCase = $mailUseCase;
        $this->getListPopularsProductsUseCase = $getListPopularsProductsUseCase;
        $this->getListAreaUseCase = $getListAreaUseCase;
+
     }
 
     public function actionIndex():array {
@@ -52,7 +56,7 @@ class ApplicationController extends Controller
     }
     public function actionGetStocks():array{
         return [
-            'stocks' => $this->allStocksUseCase->execute()
+            'stocks' => $this->allStocksUseCase->execute(),
         ];
 
     }
@@ -340,6 +344,54 @@ public  function actionGetStatusOrder(): array
 
             ])
             ->where(['address_id' => null, 'kitchen_accsess' => 1]) // Add this condition to filter by address_id = 1
+            ->distinct()
+            ->asArray()
+            ->all();
+
+        // Add product names and their count to each order
+        foreach ($orders as &$order) {
+            // Get products with their counts from the current order, filtered by address_id = 1
+            $products = Order::find()
+                ->select([
+                    'product.title',
+                    'orders.count as product_count'
+                ])
+                ->where(['orders.phoneNumber' => $order['phoneNumber'], 'orders.address_id' => null]) // Add this condition to filter by address_id = 1
+                ->joinWith('product')
+                ->asArray()
+                ->all();
+
+            // Collect product details in an array
+            $productDetails = [];
+            foreach ($products as $product) {
+                $productDetails[] = [
+                    'title' => $product['title'],
+                    'count' => $product['product_count']
+                ];
+            }
+
+            // Add products to the current order
+            $order['products'] = $productDetails;
+        }
+
+        return [
+            'data' => $orders
+        ];
+    }
+
+    public function actionGetStatusUser(): array {
+        // Get orders grouped by phone number with distinct total costs, filtered by address_id = 1
+        $orders = Order::find()
+            ->select([
+                'phoneNumber',
+                'totalCost as total_cost', // Include totalCost as total_cost
+                'nameUser as nameUser',
+                'admin_accsess as admin_accsess',
+                'kitchen_accsess as kitchen_accsess',
+                'courier_accsess as courier_accsess'
+
+            ])
+            ->where(['address_id' => null]) // Add this condition to filter by address_id = 1
             ->distinct()
             ->asArray()
             ->all();

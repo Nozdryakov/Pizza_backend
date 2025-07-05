@@ -24,6 +24,7 @@ class PopularRepository implements PopularInterface, DeletePopularInterface
         $popular->price = $price;
         return $popular->save();
     }
+   
     public function uploadImage(string $image) : bool
     {
         $popular = new Popular();

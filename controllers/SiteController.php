@@ -55,6 +55,10 @@ class SiteController extends Controller
             ],
         ];
     }
+    public function functionName()
+    {
+        return 0;
+    }
 
     public function __construct($id, $module, $config = [])
     {
@@ -91,6 +95,7 @@ class SiteController extends Controller
         return $this->render('login', [
             'model' => $model,
         ]);
+       
     }
 
     /**

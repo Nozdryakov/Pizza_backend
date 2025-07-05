@@ -125,7 +125,8 @@ $config = [
                         'GET get-order-user-courier' => 'get-order-user-courier',
                         'POST courier-access-zero'=> 'courier-access-zero',
                         'POST courier-access'=> 'courier-access',
-                        'POST get-status-order' => 'get-status-order'
+                        'POST get-status-order' => 'get-status-order',
+                        'GET get-status-user' => 'get-status-user'
                     ],
                 ],
                 [

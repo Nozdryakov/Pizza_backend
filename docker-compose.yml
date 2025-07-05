@@ -43,7 +43,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     restart: always
-    container_name: phpmyadmin
+    container_name: pizza_phpmyadmin
     environment:
       PMA_HOST: db
       PMA_PORT: 3306

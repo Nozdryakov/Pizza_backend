@@ -13,7 +13,7 @@ class AuthUserController extends Controller
     public function behaviors(): array
     {
         $behaviors = parent::behaviors();
-        $behaviors['authenticator']['except'] = ['login'];
+       $behaviors['authenticator']['except'] = ['login', 'register'];
         return $behaviors;
     }
 
